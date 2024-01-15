@@ -1,0 +1,13 @@
+# dataset_{{ perturbation }}_{{ train_set }}_seed{{ seed }}.yaml
+#   Configuration for altered babylm-dataset
+---
+dataset:
+    id: /nlp/scr/kallini/llms-in-llms/training/babylm_dataset.py
+    name: babylm_{{ perturbation }}_{{ train_set }}_seed{{ seed }}
+    validation_ratio: null
+
+    # Number of Preprocessing Workers
+    num_proc: 4
+
+    # Number of Evaluation Preprocessing Workers
+    eval_num_proc: 4
