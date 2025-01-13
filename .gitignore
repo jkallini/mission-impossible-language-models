@@ -3,11 +3,19 @@ data/babylm_data*
 edge_probing/constituency_parses/*
 edge_probing/constituency_parses_OLD/*
 
+# Weights and biases
+wandb/
+
 # Log files
 kallini-job-*.out
+runs.md
+
+# Results files
+hop_surprisal_results/
 
 # Models
 models/
+model_upload.py
 
 # VSCode
 .vscode/
