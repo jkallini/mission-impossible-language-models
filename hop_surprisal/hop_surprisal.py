@@ -11,13 +11,18 @@ import pandas as pd
 import tqdm
 import argparse
 from numpy.random import default_rng
-from transformers import GPT2LMHeadModel
-from gpt2_no_positional_encoding_model import GPT2NoPositionalEncodingLMHeadModel
+from models.modeling_gpt2 import GPT2LMHeadModel
 from itertools import zip_longest
 from glob import glob
-from utils import CHECKPOINT_READ_PATH, PERTURBATIONS, PAREN_MODELS, \
-    BABYLM_DATA_PATH, gpt2_hop_tokenizer, \
-    marker_sg_token, marker_pl_token, compute_surprisals
+from utils import (
+    CHECKPOINT_PATH,
+    PERTURBATIONS,
+    BABYLM_DATA_PATH,
+    gpt2_hop_tokenizer,
+    marker_sg_token,
+    marker_pl_token,
+    compute_surprisals,
+)
 
 
 MAX_TRAINING_STEPS = 3000
@@ -40,27 +45,19 @@ if __name__ == "__main__":
                         nargs='?',
                         choices=["100M", "10M"],
                         help='BabyLM train set')
+    parser.add_argument('run_name', type=str, default="run_name", help="Run name")
     parser.add_argument('random_seed', type=int, help="Random seed")
-    parser.add_argument('paren_model',
-                        default='all',
-                        const='all',
-                        nargs='?',
-                        choices=list(PAREN_MODELS.keys()) + ["randinit"],
-                        help='Parenthesis model')
-    parser.add_argument('-np', '--no_pos_encodings', action='store_true',
-                        help="Train GPT-2 with no positional encodings")
 
     # Get args
     args = parser.parse_args()
-    no_pos_encodings_underscore = "_no_positional_encodings" if args.no_pos_encodings else ""
 
     if "hop" not in args.perturbation_type:
         raise Exception(
             "'{args.perturbation_type}' is not a valid hop perturbation")
 
     # Get path to model
-    model = f"babylm_{args.perturbation_type}_{args.train_set}_{args.paren_model}{no_pos_encodings_underscore}_seed{args.random_seed}"
-    model_path = f"{CHECKPOINT_READ_PATH}/babylm_{args.perturbation_type}_{args.train_set}_{args.paren_model}{no_pos_encodings_underscore}/{model}/runs/{model}/checkpoint-"
+    model = f"{args.run_name}_seed{args.random_seed}"
+    model_path = f"{CHECKPOINT_PATH}/{args.perturbation_type}_{args.train_set}/{model}/checkpoints/checkpoint-"
 
     # Get perturbed test files
     test_files = sorted(glob(BABYLM_DATA_PATH +
@@ -133,12 +130,8 @@ if __name__ == "__main__":
         print(f"Checkpoint: {ckpt}")
 
         # Load model
-        if args.no_pos_encodings:
-            model = GPT2NoPositionalEncodingLMHeadModel.from_pretrained(
-                model_path + str(ckpt)).to(device)
-        else:
-            model = GPT2LMHeadModel.from_pretrained(
-                model_path + str(ckpt)).to(device)
+        model = GPT2LMHeadModel.from_pretrained(
+            model_path + str(ckpt)).to(device)
 
         # Init lists for tracking correct/wrong surprisals for each example
         marker_token_surprisals = []
@@ -185,9 +178,9 @@ if __name__ == "__main__":
         surprisal_df = pd.concat((surprisal_df, ckpt_df), axis=1)
 
     # Write results to CSV
-    directory = f"hop_surprisal_results/{args.perturbation_type}_{args.train_set}{no_pos_encodings_underscore}"
+    directory = f"hop_surprisal_results/{args.perturbation_type}_{args.train_set}"
     if not os.path.exists(directory):
         os.makedirs(directory)
-    file = directory + f"/{args.paren_model}_seed{args.random_seed}.csv"
+    file = directory + f"/{args.run_name}_seed{args.random_seed}.csv"
     print(f"Writing results to CSV: {file}")
     surprisal_df.to_csv(file)
