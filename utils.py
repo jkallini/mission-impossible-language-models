@@ -126,6 +126,55 @@ def compute_surprisals(model, input_ids):
     return surprisals
 
 
+def compute_predictions(model, input_ids):
+    # Get the predicted tokens (argmax) from the model
+    with torch.no_grad():
+        outputs = model(input_ids)
+        logits = outputs.logits[:, :-1]
+        
+        # Get the predicted token IDs (argmax of probabilities)
+        predicted_token_ids = torch.argmax(logits, dim=-1)
+    # Return the predicted token IDs
+    return predicted_token_ids.tolist()
+
+
+def compute_top_tokens(model, input_ids, tokenizer, top_k=10):
+    """
+    Compute the top-k predicted tokens for each position in the sequence.
+    Args:
+        model: The language model.
+        input_ids: The input IDs (tensor) for the sequence.
+        tokenizer: The tokenizer used to decode token IDs.
+        top_k: The number of top tokens to display (default: 10).
+    Returns:
+        List of lists containing top-k token predictions for each position.
+    """
+    with torch.no_grad():
+        outputs = model(input_ids)
+        logits = outputs.logits[:, :-1]
+        # Get the top-k token probabilities and their indices
+        top_k_probs, top_k_indices = torch.topk(
+            torch.nn.functional.softmax(logits, dim=-1), 
+            k=top_k, 
+            dim=-1
+        )
+    # Decode the token IDs and organize the output
+    top_tokens = []
+    for i, position_indices in enumerate(top_k_indices):
+        position_tokens = []
+        for token_ids in position_indices:
+            decoded_tokens = [tokenizer.decode([token_id.item()]) for token_id in token_ids]
+            position_tokens.append(decoded_tokens)
+        top_tokens.append(position_tokens)
+    
+    # Print the tokens for each position
+    for _, position_tokens in enumerate(top_tokens):
+        for i, tokens in enumerate(position_tokens):
+            print(f"Position {i + 1}: {', '.join(tokens)}")
+        print()
+    return top_tokens
+
+
 def compute_token_probabilities(model, input_ids, token_id, pad_token_id):
     # Get the log probabilities from the model
     with torch.no_grad():

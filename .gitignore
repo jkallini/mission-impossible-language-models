@@ -12,6 +12,7 @@ runs.md
 
 # Results files
 hop_surprisal_results/
+syntaxgym_eval/results/
 
 # Models
 model_upload.py
