@@ -1,25 +1,29 @@
 # babylm_dataset.py
 # author: Julie Kallini
 
+# For importing utils
+import sys
+sys.path.append("..")
+
 import datasets
+import logging
 import os
 import glob
 import tqdm
 from numpy.random import default_rng
 from itertools import product
 
+from utils import PERTURBATIONS, BABYLM_DATA_PATH
+
+datasets.logging.set_verbosity_info()
 logger = datasets.logging.get_logger(__name__)
+logger.setLevel(logging.INFO)
 
 _DESCRIPTION = """\
     Pre-tokenized BabyLM HuggingFace dataset for verb perturbations.
 """
-_PERTURBED_DATA_PATH = "/nlp/scr3/nlp/llms-in-llms/babylm_data/babylm_data_perturbed"
-_PERTURBATIONS = ["hop_control", "hop_tokens4", "hop_words4",
-                  "reverse_control", "reverse_partial", "reverse_full",
-                  "shuffle_control", "shuffle_nondeterministic",
-                  "shuffle_deterministic21", "shuffle_deterministic57", "shuffle_deterministic84",
-                  "shuffle_local3", "shuffle_local5", "shuffle_local10",
-                  "shuffle_even_odd"]
+_PERTURBED_DATA_PATH = f"{BABYLM_DATA_PATH}/babylm_data_perturbed"
+_PERTURBATIONS = PERTURBATIONS.keys()
 _RANDOM_SEEDS = [0, 14, 41, 53, 96]
 _TRAIN_SETS = ["100M", "10M"]
 _EOS_TOKEN_ID = 50256
@@ -59,8 +63,7 @@ class BabyLMCorpus(datasets.GeneratorBasedBuilder):
             # datasets.features.FeatureConnectors
             features=datasets.Features(
                 {
-                    "text": datasets.Value("string")
-                    # These are the features of your dataset like images, labels ...
+                    "input_ids": datasets.Sequence(datasets.Value(dtype="int32"))
                 }
             ),
             # If there's a common (input, target) tuple from the features,
@@ -134,5 +137,4 @@ class BabyLMCorpus(datasets.GeneratorBasedBuilder):
         # Generate data
         logger.info("Writing dataset as space-separated sequences of tokens")
         for idx, line in enumerate(tokenized_lines):
-            l = " ".join([str(tok) for tok in line]) + "\n"
-            yield idx, {"text": l}
+            yield idx, {"input_ids": line}

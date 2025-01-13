@@ -6,7 +6,6 @@ from string import punctuation
 from transformers import AutoTokenizer, AddedToken
 from functools import partial
 from numpy.random import default_rng
-from nltk.tree import ParentedTree
 import torch
 
 
@@ -30,9 +29,8 @@ GENRES = {
     "switchboard": "Switchboard Dialog Act Corpus",
     "wikipedia": "Wikipedia"
 }
-CHECKPOINT_WRITE_PATH = "/nlp/scr3/nlp/llms-in-llms/babylm_models"
-CHECKPOINT_READ_PATH = "/nlp/scr3/nlp/llms-in-llms/babylm_models"
-BABYLM_DATA_PATH = "/nlp/scr3/nlp/llms-in-llms/babylm_data"
+CHECKPOINT_PATH = "/nlp/scr3/nlp/llms-in-llms/mission-impossible/models"
+BABYLM_DATA_PATH = "/nlp/scr3/nlp/llms-in-llms/mission-impossible/babylm_data"
 MARKER_HOP_SING = "🅂"
 MARKER_HOP_PLUR = "🄿"
 MARKER_REV = "🅁"
@@ -460,6 +458,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#606060",
+        "model_upload_name": "no-shuffle",
     },
     "shuffle_nondeterministic": {
         "perturbation_function": partial(perturb_shuffle_nondeterministic, rng=default_rng(0)),
@@ -467,6 +466,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#E8384F",
+        "model_upload_name": "nondeterministic-shuffle",
     },
     "shuffle_deterministic21": {
         "perturbation_function": partial(perturb_shuffle_deterministic, seed=21, shuffle=True),
@@ -474,6 +474,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#FFB000",
+        "model_upload_name": "deterministic-shuffle-s21",
     },
     "shuffle_deterministic57": {
         "perturbation_function": partial(perturb_shuffle_deterministic, seed=57, shuffle=True),
@@ -481,6 +482,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#8db000",
+        "model_upload_name": "deterministic-shuffle-s57",
     },
     "shuffle_deterministic84": {
         "perturbation_function": partial(perturb_shuffle_deterministic, seed=84, shuffle=True),
@@ -488,6 +490,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#62BB35",
+        "model_upload_name": "deterministic-shuffle-s84",
     },
     "shuffle_local3": {
         "perturbation_function": partial(perturb_shuffle_local, seed=0, window=3),
@@ -495,6 +498,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#208EA3",
+        "model_upload_name": "local-shuffle-w3",
     },
     "shuffle_local5": {
         "perturbation_function": partial(perturb_shuffle_local, seed=0, window=5),
@@ -502,6 +506,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#4178BC",
+        "model_upload_name": "local-shuffle-w5",
     },
     "shuffle_local10": {
         "perturbation_function": partial(perturb_shuffle_local, seed=0, window=10),
@@ -509,6 +514,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#AA71FF",
+        "model_upload_name": "local-shuffle-w10",
     },
     "shuffle_even_odd": {
         "perturbation_function": perturb_shuffle_even_odd,
@@ -516,6 +522,7 @@ PERTURBATIONS = {
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#E37CFF",
+        "model_upload_name": "even-odd-shuffle",
     },
     "reverse_control": {
         "perturbation_function": partial(perturb_reverse, rng=default_rng(21), reverse=False, full=False),
@@ -523,6 +530,7 @@ PERTURBATIONS = {
         "filter_function": filter_reverse,
         "gpt2_tokenizer": gpt2_rev_tokenizer,
         "color": "#606060",
+        "model_upload_name": "no-reverse",
     },
     "reverse_partial": {
         "perturbation_function": partial(perturb_reverse, rng=default_rng(21), reverse=True, full=False),
@@ -530,6 +538,7 @@ PERTURBATIONS = {
         "filter_function": filter_reverse,
         "gpt2_tokenizer": gpt2_rev_tokenizer,
         "color": "#E5A836",
+        "model_upload_name": "partial-reverse",
     },
     "reverse_full": {
         "perturbation_function": partial(perturb_reverse, rng=default_rng(21), reverse=False, full=True),
@@ -537,6 +546,7 @@ PERTURBATIONS = {
         "filter_function": filter_reverse,
         "gpt2_tokenizer": gpt2_rev_tokenizer,
         "color": "#A348A6",
+        "model_upload_name": "full-reverse",
     },
     "hop_control": {
         "perturbation_function": perturb_hop_control,
@@ -544,6 +554,8 @@ PERTURBATIONS = {
         "filter_function": filter_hop,
         "gpt2_tokenizer": gpt2_hop_tokenizer,
         "color": "#606060",
+        "model_upload_name": "no-hop",
+
     },
     "hop_tokens4": {
         "perturbation_function": perturb_hop_tokens4,
@@ -551,6 +563,7 @@ PERTURBATIONS = {
         "filter_function": filter_hop,
         "gpt2_tokenizer": gpt2_hop_tokenizer,
         "color": "#fa8128", 
+        "model_upload_name": "token-hop",
     },
     "hop_words4": {
         "perturbation_function": perturb_hop_words4,
@@ -558,5 +571,6 @@ PERTURBATIONS = {
         "filter_function": filter_hop,
         "gpt2_tokenizer": gpt2_hop_tokenizer,
         "color": "#03a0ff",
+        "model_upload_name": "word-hop",
     },
 }

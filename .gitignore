@@ -14,7 +14,6 @@ runs.md
 hop_surprisal_results/
 
 # Models
-models/
 model_upload.py
 
 # VSCode
