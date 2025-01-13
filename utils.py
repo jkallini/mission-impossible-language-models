@@ -1,5 +1,5 @@
 # utils.py
-# Author: Julie Kallini
+# Author: Julie Kallini, Sasha Boguraev
 
 from collections import deque
 from string import punctuation
@@ -7,13 +7,15 @@ from transformers import AutoTokenizer, AddedToken
 from functools import partial
 from numpy.random import default_rng
 import torch
-
+from lemminflect import getInflection
 
 ##############################################################################
 # CONSTANTS
 ##############################################################################
 
-
+BASE_PATH = "/nlp/scr3/nlp/llms-in-llms/mission-impossible" # Update this to the path of your project
+CHECKPOINT_PATH = f"{BASE_PATH}/models"
+BABYLM_DATA_PATH = f"{BASE_PATH}/babylm_data"
 BABYLM_SPLITS = ['100M', '10M', 'dev', 'test', 'unittest']
 SEEDS = [21, 57, 84]
 CHECKPOINTS = list(range(50, 501, 50))
@@ -29,27 +31,12 @@ GENRES = {
     "switchboard": "Switchboard Dialog Act Corpus",
     "wikipedia": "Wikipedia"
 }
-CHECKPOINT_PATH = "/nlp/scr3/nlp/llms-in-llms/mission-impossible/models"
-BABYLM_DATA_PATH = "/nlp/scr3/nlp/llms-in-llms/mission-impossible/babylm_data"
 MARKER_HOP_SING = "🅂"
 MARKER_HOP_PLUR = "🄿"
 MARKER_REV = "🅁"
 BOS_TOKEN = "<BOS_TOKEN>"
 PART_TOKENS = set(["n't", "'ll", "'s", "'re", "'ve", "'m"])
 PUNCT_TOKENS = set(punctuation)
-
-
-##############################################################################
-# PARENS MODELS (Structurally-pretrained)
-##############################################################################
-
-
-PAREN_MODEL_PATH = "/u/scr/isabelvp//tilt-stuff/tilt-finetuning/pretrained_checkpoints/"
-PAREN_MODELS = {
-    "CROSS": "flat-parens_vocab500-uniform_deplength-nesting-nolimit",
-    "NEST": "nested-parens0.49_vocab500-uniform",
-    "RAND": "random_vocab500-uniform",
-}
 
 
 ##############################################################################
@@ -134,6 +121,7 @@ def compute_predictions(model, input_ids):
         
         # Get the predicted token IDs (argmax of probabilities)
         predicted_token_ids = torch.argmax(logits, dim=-1)
+
     # Return the predicted token IDs
     return predicted_token_ids.tolist()
 
@@ -141,23 +129,27 @@ def compute_predictions(model, input_ids):
 def compute_top_tokens(model, input_ids, tokenizer, top_k=10):
     """
     Compute the top-k predicted tokens for each position in the sequence.
+
     Args:
         model: The language model.
         input_ids: The input IDs (tensor) for the sequence.
         tokenizer: The tokenizer used to decode token IDs.
         top_k: The number of top tokens to display (default: 10).
+
     Returns:
         List of lists containing top-k token predictions for each position.
     """
     with torch.no_grad():
         outputs = model(input_ids)
         logits = outputs.logits[:, :-1]
+
         # Get the top-k token probabilities and their indices
         top_k_probs, top_k_indices = torch.topk(
             torch.nn.functional.softmax(logits, dim=-1), 
             k=top_k, 
             dim=-1
         )
+
     # Decode the token IDs and organize the output
     top_tokens = []
     for i, position_indices in enumerate(top_k_indices):
@@ -172,6 +164,7 @@ def compute_top_tokens(model, input_ids, tokenizer, top_k=10):
         for i, tokens in enumerate(position_tokens):
             print(f"Position {i + 1}: {', '.join(tokens)}")
         print()
+
     return top_tokens
 
 
@@ -205,6 +198,135 @@ def merge_part_tokens(words):
         else:
             result.append(s)
     return result
+
+
+def replace_verb_form(lemma, features_dict, noun_number):
+    person = features_dict.get("Person")
+    tense = features_dict.get("Tense")
+    verb_form = features_dict.get("VerbForm")
+
+    # Handle Present Tense
+    if tense == 'Pres':
+        if noun_number == 'Sing':
+            # Make plural verb singular
+            if person == '3':
+                # Make 3rd person singular present
+                inflections = getInflection(lemma, tag='VBZ')
+                return inflections[0]
+            else:
+                # Make non-3rd person singular present
+                inflections = getInflection(lemma, tag='VBP')
+
+                # Handle cases where first person and second person singular are the same
+                if len(inflections) == 1:
+                    return inflections[0]
+                elif len(inflections) == 2 or len(inflections) == 3:
+                    return inflections[0] if person == '1' else inflections[1]
+                
+                
+        # Make singular verb plural
+        elif noun_number == 'Plur':
+            
+            # Handle irregular verb 'be'
+            if lemma == 'be':
+                return 'are'
+            # All other verbs should just be base form
+            else:
+                return lemma
+    
+    # Handle Past Tense       
+    elif tense == 'Past':
+        # Get past tense form
+        inflections = getInflection(lemma, tag='VBD')
+
+        # Handle cases where there are multiple past tense inflections
+        if len(inflections) == 1:
+            return inflections[0]
+        elif len(inflections) == 2 or len(inflections) == 3:
+            return inflections[0] if person == '1' else inflections[1]
+    
+    # Handle infinitve form
+    elif verb_form == 'Inf':
+        return lemma
+    
+    return lemma
+
+
+def __perturb_local_agreement(sent):
+
+    sentence = sent["word_annotations"].copy()
+    last_noun_num = None
+    new_sent = []
+    
+    for _, word in enumerate(sentence):
+        # get features for word
+        features = word['feats']
+        if features:
+            features = features.split("|")
+            features_dict = {f.split("=")[0]: f.split("=")[1] for f in features}
+        else:
+            features_dict = {}
+
+        # Check if the word is a noun
+        if word['upos'] in ['NOUN', 'PROPN', 'PRON']:
+            # If noun, get the number, and make it the last noun, if no 
+            # number set last_noun_num to None. Add noun to sentence
+            last_noun_num = features_dict["Number"] if "Number" in features_dict.keys() else None
+            new_sent.append(word['text'])
+
+        # Check if the word is a verb or aux
+        elif word['upos'] in ['VERB', 'AUX']:
+            # Get the verb number
+            verb_num = features_dict["Number"] if "Number" in features_dict.keys() else None
+
+            # Check wether the last noun has a number
+            if last_noun_num == None:
+                # If no number on last noun, append the verb 
+                # as is to the new sentence
+                new_sent.append(word['text'])
+                continue
+
+            # If last noun has number, check that the verb 
+            # has a number and wether they are the same
+            elif last_noun_num != verb_num and verb_num:
+                # If not the same, get the lemma
+                verb = word['text']
+                lemma = word['lemma']
+                
+                # Replace the verb form based on noun number
+                if last_noun_num == 'Plur':
+                    verb = replace_verb_form(lemma, features_dict, 'Plur')
+                elif last_noun_num == 'Sing':
+                    verb = replace_verb_form(lemma, features_dict, 'Sing')
+
+                # Append the new verb
+                new_sent.append(verb)
+
+            # If both of them match just add verb
+            else:
+                new_sent.append(word['text']) 
+
+        # If not noun or verb
+        else:
+            new_sent.append(word['text']) 
+            
+    assert len(new_sent) == len(sentence), print(new_sent, sent["sent_text"])
+    sent_string = " ".join(merge_part_tokens(new_sent))
+    tokens = gpt2_original_tokenizer.encode(sent_string)
+    return tokens   
+
+
+def __perturb_control_agreement(sent):
+    sentence = sent["word_annotations"].copy()
+    new_sent = []
+    
+    for _, word in enumerate(sentence):
+        new_sent.append(word['text']) 
+            
+    assert len(new_sent) == len(sentence), print(new_sent, sent["sent_text"])
+    sent_string = " ".join(merge_part_tokens(new_sent))
+    tokens = gpt2_original_tokenizer.encode(sent_string)
+    return tokens   
 
 
 def __affect_hop_word(word):
@@ -399,22 +521,17 @@ def __perturb_shuffle_even_odd(sent):
 ##############################################################################
 # AFFECT FUNCTIONS
 # These functions define when a perturbation has been applied to a sentence
-# not. This is used for identifying which test sentences have been
+# or not. This is used for identifying which test sentences have been
 # altered to separate affected vs. unaffected senences. Affect functions are
 # functions of the input sentence object and return a boolean.
 ##############################################################################
 
 
 def affect_hop(sent):
-    return any([__affect_hop_word(word) for word in sent['word_annotations']]) \
-        and sent["constituency_parse"] is not None
+    return any([__affect_hop_word(word) for word in sent['word_annotations']])
 
 
-def affect_reverse(sent):
-    return True
-
-
-def affect_shuffle(sent):
+def affect_all(sent):
     return True
 
 
@@ -425,9 +542,9 @@ def affect_none(sent):
 ##############################################################################
 # FILTER FUNCTIONS
 # These functions define when an affected sentence should be included in the
-# final dataset. For instance, hop perturbations where the marker is placed
-# at the end of the sentence should be excluded. A filter function returns
-# True if an affected sentence should be included in the dataset.
+# final dataset. For instance, hop perturbations where the marker would exceed
+# the end of the sentence should be excluded. A filter function returns True
+# if an affected sentence should be included in the dataset.
 ##############################################################################
 
 
@@ -438,13 +555,13 @@ def filter_hop(sent):
     return check_word_hops_completed(sent, 4)
 
 
-def filter_reverse(sent):
-    return True
-
-
 def filter_shuffle(sent):
     tokens = gpt2_original_tokenizer.encode(sent["sent_text"])
     return len(tokens) > 1 and len(tokens) <= 350
+
+
+def filter_all(sent):
+    return True
 
 
 def filter_none(sent):
@@ -454,9 +571,9 @@ def filter_none(sent):
 ##############################################################################
 # PERTURBATION FUNCTIONS
 # These functions define how a perturbation will affect a sentence. They
-# take in a sentence object and an optional marker
-# for verb transformations. They return a string representing the transformed
-# sentence.
+# take in a sentence object plus any additional parameters needed for the
+# perturbation. They return a sequence of tokens representing the
+# transformed sentence.
 ##############################################################################
 
 
@@ -492,6 +609,13 @@ def perturb_shuffle_even_odd(sent):
     return __perturb_shuffle_even_odd(sent)
 
 
+def perturb_local_agreement(sent):
+    return __perturb_local_agreement(sent)
+
+def perturb_control_agreement(sent):
+    return __perturb_control_agreement(sent)
+
+
 ##############################################################################
 # PERTURBATIONS
 # This dict maps the name of a perturbation to its perturbation and filter
@@ -503,7 +627,7 @@ def perturb_shuffle_even_odd(sent):
 PERTURBATIONS = {
     "shuffle_control": {
         "perturbation_function": partial(perturb_shuffle_deterministic, seed=None, shuffle=False),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#606060",
@@ -511,7 +635,7 @@ PERTURBATIONS = {
     },
     "shuffle_nondeterministic": {
         "perturbation_function": partial(perturb_shuffle_nondeterministic, rng=default_rng(0)),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#E8384F",
@@ -519,7 +643,7 @@ PERTURBATIONS = {
     },
     "shuffle_deterministic21": {
         "perturbation_function": partial(perturb_shuffle_deterministic, seed=21, shuffle=True),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#FFB000",
@@ -527,7 +651,7 @@ PERTURBATIONS = {
     },
     "shuffle_deterministic57": {
         "perturbation_function": partial(perturb_shuffle_deterministic, seed=57, shuffle=True),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#8db000",
@@ -535,7 +659,7 @@ PERTURBATIONS = {
     },
     "shuffle_deterministic84": {
         "perturbation_function": partial(perturb_shuffle_deterministic, seed=84, shuffle=True),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#62BB35",
@@ -543,7 +667,7 @@ PERTURBATIONS = {
     },
     "shuffle_local3": {
         "perturbation_function": partial(perturb_shuffle_local, seed=0, window=3),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#208EA3",
@@ -551,7 +675,7 @@ PERTURBATIONS = {
     },
     "shuffle_local5": {
         "perturbation_function": partial(perturb_shuffle_local, seed=0, window=5),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#4178BC",
@@ -559,7 +683,7 @@ PERTURBATIONS = {
     },
     "shuffle_local10": {
         "perturbation_function": partial(perturb_shuffle_local, seed=0, window=10),
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#AA71FF",
@@ -567,7 +691,7 @@ PERTURBATIONS = {
     },
     "shuffle_even_odd": {
         "perturbation_function": perturb_shuffle_even_odd,
-        "affect_function": affect_shuffle,
+        "affect_function": affect_all,
         "filter_function": filter_shuffle,
         "gpt2_tokenizer": gpt2_original_tokenizer,
         "color": "#E37CFF",
@@ -575,24 +699,24 @@ PERTURBATIONS = {
     },
     "reverse_control": {
         "perturbation_function": partial(perturb_reverse, rng=default_rng(21), reverse=False, full=False),
-        "affect_function": affect_reverse,
-        "filter_function": filter_reverse,
+        "affect_function": affect_all,
+        "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_rev_tokenizer,
         "color": "#606060",
         "model_upload_name": "no-reverse",
     },
     "reverse_partial": {
         "perturbation_function": partial(perturb_reverse, rng=default_rng(21), reverse=True, full=False),
-        "affect_function": affect_reverse,
-        "filter_function": filter_reverse,
+        "affect_function": affect_all,
+        "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_rev_tokenizer,
         "color": "#E5A836",
         "model_upload_name": "partial-reverse",
     },
     "reverse_full": {
         "perturbation_function": partial(perturb_reverse, rng=default_rng(21), reverse=False, full=True),
-        "affect_function": affect_reverse,
-        "filter_function": filter_reverse,
+        "affect_function": affect_all,
+        "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_rev_tokenizer,
         "color": "#A348A6",
         "model_upload_name": "full-reverse",
@@ -622,4 +746,20 @@ PERTURBATIONS = {
         "color": "#03a0ff",
         "model_upload_name": "word-hop",
     },
+    "control_agreement": {
+        "perturbation_function": perturb_control_agreement,
+        "affect_function": affect_all,
+        "filter_function": filter_all,
+        "gpt2_tokenizer": gpt2_original_tokenizer,
+        "color": None,
+        "model_upload_name": None,
+    },
+    "local_agreement": {
+        "perturbation_function": perturb_local_agreement,
+        "affect_function": affect_all,
+        "filter_function": filter_all,
+        "gpt2_tokenizer": gpt2_original_tokenizer,
+        "color": None,
+        "model_upload_name": None,
+    }
 }
