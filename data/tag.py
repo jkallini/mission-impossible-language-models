@@ -63,21 +63,22 @@ if __name__ == "__main__":
         description='Tag BabyLM dataset using Stanza')
     parser.add_argument('path', type=argparse.FileType('r'),
                         nargs='+', help="Path to file(s)")
-    parser.add_argument('-p', '--parse', action='store_true',
+    parser.add_argument('--constituency_parse', action='store_true',
                         help="Include constituency parse")
-
+    parser.add_argument('--dependency_parse', action='store_true',
+                        help="Include dependency parse")
     # Get args
     args = parser.parse_args()
 
     # Init Stanza NLP tools
     nlp1 = stanza.Pipeline(
         lang='en',
-        processors='tokenize, pos, lemma',
-        package="default_accurate",
+        processors='tokenize,pos,lemma,depparse' if args.dependency_parse else 'tokenize,pos,lemma',
+        # package="default_accurate",
         use_gpu=True)
 
     # If constituency parse is needed, init second Stanza parser
-    if args.parse:
+    if args.constituency_parse:
         nlp2 = stanza.Pipeline(lang='en',
                                processors='tokenize,pos,constituency',
                                package="default_accurate",
@@ -120,12 +121,16 @@ if __name__ == "__main__":
                         'xpos': word.xpos,
                         'feats': word.feats,
                         'start_char': token.start_char,
-                        'end_char': token.end_char
+                        'end_char': token.end_char,
+                        # Add dependency parse-specific fields
+                        'feats': word.feats if args.dependency_parse else None,
+                        'head': word.head if args.dependency_parse else None,
+                        'deprel': word.deprel if args.dependency_parse else None,
                     }
                     word_annotations.append(wa)  # Track word annotation
 
                 # Get constituency parse if needed
-                if args.parse:
+                if args.constituency_parse:
                     constituency_parse = __get_constituency_parse(sent, nlp2)
                     sa = {
                         'sent_text': sent.text,
@@ -146,7 +151,11 @@ if __name__ == "__main__":
 
         # Write annotations to file as a JSON
         print("Writing JSON outfile...")
-        ext = '_parsed.json' if args.parse else '.json'
+        ext = ".json"
+        if args.constituency_parse:
+            ext = "_const" + ext
+        if args.dependency_parse:
+            ext = "_dep" + ext
         json_filename = os.path.splitext(file.name)[0] + ext
         with open(json_filename, "w") as outfile:
             json.dump(line_annotations, outfile, indent=4)
