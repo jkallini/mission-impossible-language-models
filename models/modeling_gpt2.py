@@ -53,6 +53,7 @@ from transformers.utils import (
 from transformers.utils.model_parallel_utils import assert_device_map, get_device_map
 from .configuration_gpt2 import GPT2Config
 
+import torch.nn.functional as F
 
 if is_flash_attn_2_available():
     from transformers.modeling_flash_attention_utils import _flash_attention_forward
@@ -62,6 +63,22 @@ logger = logging.get_logger(__name__)
 
 _CHECKPOINT_FOR_DOC = "openai-community/gpt2"
 _CONFIG_FOR_DOC = "GPT2Config"
+
+#### NEW CODE ####
+def gatt(att: torch.Tensor) -> torch.Tensor:
+    att = att.float()
+    # Numerically stable implementaiton from https://openreview.net/pdf?id=r8J3DSD5kF
+
+    prev = F.softplus(att, threshold=15)
+
+    # cumsum from right to left
+    prevs = prev.cumsum(dim=-1)
+    prevs = prev + prevs[..., -1:] - prevs
+
+    res = att - prevs
+    res = res.exp()
+    return res
+#### NEW CODE ####
 
 
 def load_tf_weights_in_gpt2(model, config, gpt2_checkpoint_path):
@@ -206,7 +223,12 @@ class GPT2Attention(nn.Module):
             # Apply the attention mask
             attn_weights = attn_weights + attention_mask
 
-        attn_weights = nn.functional.softmax(attn_weights, dim=-1)
+        #### NEW CODE ####
+        if self.config.geometric_attention:
+            attn_weights = gatt(attn_weights)
+        else:
+            attn_weights = nn.functional.softmax(attn_weights, dim=-1)
+        #### NEW CODE ####
 
         # Downcast (if necessary) back to V's dtype (if in mixed-precision) -- No-Op otherwise
         attn_weights = attn_weights.type(value.dtype)
@@ -900,8 +922,9 @@ class GPT2Model(GPT2PreTrainedModel):
         self.wte = nn.Embedding(config.vocab_size, self.embed_dim)
         
         #### NEW CODE ####
-        self.has_positional_encodings = config.has_positional_encodings
-        if self.has_positional_encodings:
+        self.has_absolute_positional_encodings = \
+            config.has_positional_encodings and not self.config.geometric_attention
+        if self.has_absolute_positional_encodings:
             self.wpe = nn.Embedding(config.max_position_embeddings, self.embed_dim)
         #### NEW CODE ####
 
@@ -938,7 +961,7 @@ class GPT2Model(GPT2PreTrainedModel):
         self.wte = self.wte.to(self.first_device)
 
         #### NEW CODE ####
-        if self.has_positional_encodings:
+        if self.has_absolute_positional_encodings:
             self.wpe = self.wpe.to(self.first_device)
         #### NEW CODE ####
 
@@ -963,7 +986,7 @@ class GPT2Model(GPT2PreTrainedModel):
         self.wte = self.wte.to("cpu")
 
         #### NEW CODE ####
-        if self.has_positional_encodings:
+        if self.has_absolute_positional_encodings:
             self.wpe = self.wpe.to("cpu")
         #### NEW CODE ####
 
@@ -1045,7 +1068,7 @@ class GPT2Model(GPT2PreTrainedModel):
             inputs_embeds = self.wte(input_ids)
 
         #### NEW CODE ####
-        if self.has_positional_encodings:
+        if self.has_absolute_positional_encodings:
             position_embeds = self.wpe(position_ids)
             hidden_states = inputs_embeds + position_embeds
         else:

@@ -41,6 +41,7 @@ def main(args):
         bos_token_id=tokenizer.bos_token_id,
         eos_token_id=tokenizer.eos_token_id,
         has_positional_encodings=not args.no_pos_encodings,
+        geometric_attention=args.geometric_attention,
     )
 
     # Initialize the GPT-2 model
@@ -135,6 +136,7 @@ if __name__ == "__main__":
     
     # GPT-2 architecture arguments
     parser.add_argument('--no_pos_encodings', action='store_true', help="No positional encodings")
+    parser.add_argument('--geometric_attention', action='store_true', help="Use geometric attention")
 
     # Training arguments
     parser.add_argument('--run_name', type=str, default="run_name", help="Run name")

@@ -156,6 +156,7 @@ class GPT2Config(PretrainedConfig):
         reorder_and_upcast_attn=False,
         #### NEW CODE ####
         has_positional_encodings=True,
+        geometric_attention=False,
         #### NEW CODE ####
         **kwargs,
     ):
@@ -186,6 +187,7 @@ class GPT2Config(PretrainedConfig):
 
         #### NEW CODE ####
         self.has_positional_encodings = has_positional_encodings
+        self.geometric_attention = geometric_attention
         #### NEW CODE ####
 
         super().__init__(bos_token_id=bos_token_id, eos_token_id=eos_token_id, **kwargs)
