@@ -42,7 +42,12 @@ def main(args):
         eos_token_id=tokenizer.eos_token_id,
         has_positional_encodings=not args.no_pos_encodings,
         geometric_attention=args.geometric_attention,
+        alibi=args.alibi,
+        _attn_implementation_autoset=False,
+        _attn_implementation="eager",
     )
+
+    print(config)
 
     # Initialize the GPT-2 model
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -94,7 +99,6 @@ def main(args):
         seed=args.random_seed,
         fp16=True,
         report_to="wandb" if not args.disable_wandb else [],
-        resume_from_checkpoint=args.resume_from_checkpoint,
     )
 
     # Data collator for dynamic padding
@@ -114,7 +118,7 @@ def main(args):
     )
 
     # Start training
-    trainer.train()
+    trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)
 
 
 if __name__ == "__main__":
@@ -137,6 +141,7 @@ if __name__ == "__main__":
     # GPT-2 architecture arguments
     parser.add_argument('--no_pos_encodings', action='store_true', help="No positional encodings")
     parser.add_argument('--geometric_attention', action='store_true', help="Use geometric attention")
+    parser.add_argument('--alibi', action='store_true', help="Use alibi position biases")
 
     # Training arguments
     parser.add_argument('--run_name', type=str, default="run_name", help="Run name")
