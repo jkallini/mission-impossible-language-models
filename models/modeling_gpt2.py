@@ -66,6 +66,10 @@ _CONFIG_FOR_DOC = "GPT2Config"
 
 #### NEW CODE ####
 def gatt(att: torch.Tensor) -> torch.Tensor:
+    """
+    Geometric attention. Replaces softmax function.
+    """
+    
     att = att.float()
     # Numerically stable implementaiton from https://openreview.net/pdf?id=r8J3DSD5kF
 
@@ -78,6 +82,21 @@ def gatt(att: torch.Tensor) -> torch.Tensor:
     res = att - prevs
     res = res.exp()
     return res
+
+
+def get_relative_positions(seq_len: int) -> torch.tensor:
+    x = torch.arange(seq_len)[None, :]
+    y = torch.arange(seq_len)[:, None]
+    return x - y
+
+
+def get_alibi_slope(num_heads):
+    x = (2 ** 8) ** (1 / num_heads)
+    return (
+        torch.tensor([1 / x ** (i + 1) for i in range(num_heads)])
+        .unsqueeze(-1)
+        .unsqueeze(-1)
+    )
 #### NEW CODE ####
 
 
@@ -182,6 +201,10 @@ class GPT2Attention(nn.Module):
 
         self.pruned_heads = set()
 
+        ### NEW CODE ###
+        if getattr(self.config, "alibi", False):
+            self.register_buffer("alibi_m", get_alibi_slope(self.num_heads))
+
     def prune_heads(self, heads):
         if len(heads) == 0:
             return
@@ -224,7 +247,12 @@ class GPT2Attention(nn.Module):
             attn_weights = attn_weights + attention_mask
 
         #### NEW CODE ####
-        if self.config.geometric_attention:
+        if getattr(self.config, "alibi", False):
+            seq_len = attn_weights.size(-1)
+            alibi_bias = (self.alibi_m * get_relative_positions(seq_len).to(attn_weights.device)).unsqueeze(0)
+            attn_weights = attn_weights + alibi_bias
+            
+        if getattr(self.config, "geometric_attention", False):
             attn_weights = gatt(attn_weights)
         else:
             attn_weights = nn.functional.softmax(attn_weights, dim=-1)
@@ -278,7 +306,17 @@ class GPT2Attention(nn.Module):
             # Apply the attention mask
             attn_weights = attn_weights + attention_mask
 
-        attn_weights = nn.functional.softmax(attn_weights, dim=-1)
+        #### NEW CODE ####
+        if getattr(self.config, "alibi", False):
+            seq_len = attn_weights.size(-1)
+            alibi_bias = (self.m * get_relative_positions(seq_len)).unsqueeze(0)
+            attn_weights = attn_weights + alibi_bias
+            
+        if getattr(self.config, "geometric_attention", False):
+            attn_weights = gatt(attn_weights)
+        else:
+            attn_weights = nn.functional.softmax(attn_weights, dim=-1)
+        #### NEW CODE ####
 
         # Downcast (if necessary) back to V's dtype (if in mixed-precision) -- No-Op if otherwise
         if attn_weights.dtype != torch.float32:
@@ -923,7 +961,9 @@ class GPT2Model(GPT2PreTrainedModel):
         
         #### NEW CODE ####
         self.has_absolute_positional_encodings = \
-            config.has_positional_encodings and not self.config.geometric_attention
+            config.has_positional_encodings and \
+                not (getattr(config, "geometric_attention", False) or getattr(config, "alibi", False))
+
         if self.has_absolute_positional_encodings:
             self.wpe = nn.Embedding(config.max_position_embeddings, self.embed_dim)
         #### NEW CODE ####
