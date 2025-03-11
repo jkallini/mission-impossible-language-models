@@ -52,6 +52,7 @@ from transformers.utils import (
 )
 from transformers.utils.model_parallel_utils import assert_device_map, get_device_map
 from .configuration_gpt2 import GPT2Config
+from rope import RotaryPosEncoding
 
 import torch.nn.functional as F
 
@@ -205,6 +206,11 @@ class GPT2Attention(nn.Module):
         if getattr(self.config, "alibi", False):
             self.register_buffer("alibi_m", get_alibi_slope(self.num_heads))
 
+        if getattr(self.config, "rope", False):
+            self.rope = RotaryPosEncoding(self.embed_dim)
+        
+        ### NEW CODE ###
+
     def prune_heads(self, heads):
         if len(heads) == 0:
             return
@@ -221,6 +227,12 @@ class GPT2Attention(nn.Module):
         self.pruned_heads = self.pruned_heads.union(heads)
 
     def _attn(self, query, key, value, attention_mask=None, head_mask=None):
+
+        ### NEW CODE ###
+        if getattr(self.config, "rope", False):
+            query, key = self.rope(query, key)
+        ### NEW CODE ###
+
         attn_weights = torch.matmul(query, key.transpose(-1, -2))
 
         if self.scale_attn_weights:
