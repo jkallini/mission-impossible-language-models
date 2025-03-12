@@ -34,6 +34,7 @@ GENRES = {
 MARKER_HOP_SING = "🅂"
 MARKER_HOP_PLUR = "🄿"
 MARKER_REV = "🅁"
+MARKER_NEG = "🄽"
 BOS_TOKEN = "<BOS_TOKEN>"
 PART_TOKENS = set(["n't", "'ll", "'s", "'re", "'ve", "'m"])
 PUNCT_TOKENS = set(punctuation)
@@ -92,7 +93,15 @@ gpt2_det_tokenizer = get_gpt2_tokenizer_with_markers(
 bos_token_id = gpt2_det_tokenizer.get_added_vocab()[BOS_TOKEN]
 
 
-MARKER_TOKEN_IDS = [marker_sg_token, marker_pl_token, marker_rev_token]
+# GPT-2 neg tokenization
+gpt2_neg_tokenizer = get_gpt2_tokenizer_with_markers(
+    [MARKER_NEG])
+# Get ids of negation tokens
+marker_neg_token = gpt2_neg_tokenizer.get_added_vocab()[
+    MARKER_NEG]
+
+
+MARKER_TOKEN_IDS = [marker_sg_token, marker_pl_token, marker_rev_token, marker_neg_token]
 
 
 def compute_surprisals(model, input_ids):
@@ -252,6 +261,75 @@ def replace_verb_form(lemma, features_dict, noun_number):
     return lemma
 
 
+def find_root(sent_annot):
+    for idx, word in enumerate(sent_annot):
+        if word["deprel"]=="root":
+           return word["id"]
+    return -1
+
+
+def __perturb_neg_tokens(sent, marker_neg_token):
+    """
+    Questions:
+    -- Middle of conjunctions? (['okay', 'so', 'you', '🄽', "'re", 'gon', 'na', 'kill', 'your', 'dad'])
+    -- Multiple negatives?
+    """
+    sentence = sent["word_annotations"].copy()
+    new_sent = []
+
+    root_idx = find_root(sentence)
+    if root_idx == -1:
+        return gpt2_neg_tokenizer.encode(sent["sent_text"])
+
+    negation_tokens = ["n't", "not", "no"]
+
+    negate = False
+
+    for idx, word in enumerate(sentence):
+        if word["lemma"] in negation_tokens and word["head"] == root_idx:
+            negate = True
+        else:
+            new_sent.append(word["text"])
+    
+    sent_string = " ".join(merge_part_tokens(new_sent))
+    tokens = gpt2_neg_tokenizer.encode(sent_string)
+    if negate:
+        tokens.insert(3, marker_neg_token)
+
+    return tokens
+
+
+def __perturb_neg_control(sent, marker_neg_token):
+    """
+    Questions:
+    -- Middle of conjunctions? (['okay', 'so', 'you', '🄽', "'re", 'gon', 'na', 'kill', 'your', 'dad'])
+    -- Multiple negatives?
+    """
+    sentence = sent["word_annotations"].copy()
+    new_sent = []
+
+    root_idx = find_root(sentence)
+    if root_idx == -1:
+        return gpt2_neg_tokenizer.encode(sent["sent_text"])
+
+    negation_tokens = ["n't", "not", "no"]
+    negation_idx = None
+
+    for idx, word in enumerate(sentence):
+        if not (word["lemma"] in negation_tokens and word["head"] == root_idx):
+            new_sent.append(word["text"])
+        else:
+            negation_idx = idx
+        
+    sent_string = " ".join(merge_part_tokens(new_sent))
+    tokens = gpt2_neg_tokenizer.encode(sent_string)
+    if negation_idx:
+        tokens.insert(negation_idx, marker_neg_token)
+
+    return tokens
+
+
+
 def __perturb_local_agreement(sent):
 
     sentence = sent["word_annotations"].copy()
@@ -334,6 +412,10 @@ def __affect_hop_word(word):
         and "Tense=Pres" in word["feats"] \
         and "VerbForm=Fin" in word["feats"] \
         and "Number" in word["feats"]
+
+
+def __affect_linear_neg(word, head_idx):
+    return word["lemma"] in ["not", "n't", "no"] and word["head"] == head_idx
 
 
 def __perturb_hop_words(sent, num_hops, marker_sg, marker_pl):
@@ -531,6 +613,11 @@ def affect_hop(sent):
     return any([__affect_hop_word(word) for word in sent['word_annotations']])
 
 
+def affect_neg(sent):
+    head = find_root(sent["word_annotations"])
+    return any([__affect_linear_neg(word, head) for word in sent['word_annotations']]) and head != -1
+
+
 def affect_all(sent):
     return True
 
@@ -558,6 +645,13 @@ def filter_hop(sent):
 def filter_shuffle(sent):
     tokens = gpt2_original_tokenizer.encode(sent["sent_text"])
     return len(tokens) > 1 and len(tokens) <= 350
+
+
+def filter_neg(sent):
+    assert (affect_neg(sent))
+    head = find_root(sent["word_annotations"])
+    tokens = gpt2_neg_tokenizer.encode(sent["sent_text"])
+    return sum([__affect_linear_neg(word, head) for word in sent['word_annotations']]) < 2 and len(tokens) >= 4 and head != -1
 
 
 def filter_all(sent):
@@ -612,8 +706,13 @@ def perturb_shuffle_even_odd(sent):
 def perturb_local_agreement(sent):
     return __perturb_local_agreement(sent)
 
+
 def perturb_control_agreement(sent):
     return __perturb_control_agreement(sent)
+
+
+def perturb_neg_tokens(sent):
+    return __perturb_neg_tokens(sent, MARKER_NEG)
 
 
 ##############################################################################
@@ -759,6 +858,22 @@ PERTURBATIONS = {
         "affect_function": affect_all,
         "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_original_tokenizer,
+        "color": None,
+        "model_upload_name": None,
+    },
+    "linear_negation": {
+        "perturbation_function": partial(__perturb_neg_tokens, marker_neg_token=marker_neg_token),
+        "affect_function": affect_neg,
+        "filter_function": filter_neg,
+        "gpt2_tokenizer": gpt2_neg_tokenizer,
+        "color": None,
+        "model_upload_name": None,
+    },
+    "negation_control": {
+        "perturbation_function": partial(__perturb_neg_control, marker_neg_token=marker_neg_token),
+        "affect_function": affect_neg,
+        "filter_function": filter_neg,
+        "gpt2_tokenizer": gpt2_neg_tokenizer,
         "color": None,
         "model_upload_name": None,
     }
