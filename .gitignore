@@ -11,7 +11,7 @@ kallini-job-*.out
 runs.md
 
 # Results files
-hop_surprisal_results*/
+*surprisal_results*/
 syntaxgym_eval/results/
 
 # Models

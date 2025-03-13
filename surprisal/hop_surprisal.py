@@ -26,7 +26,7 @@ from utils import (
 
 
 MAX_TRAINING_STEPS = 3000
-CHECKPOINTS = list(range(100, MAX_TRAINING_STEPS+1, 100))
+CHECKPOINTS = [300, 600, 900, 1200, 1500, 3000]
 
 if __name__ == "__main__":
 
