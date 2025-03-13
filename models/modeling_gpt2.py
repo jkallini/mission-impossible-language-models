@@ -52,7 +52,7 @@ from transformers.utils import (
 )
 from transformers.utils.model_parallel_utils import assert_device_map, get_device_map
 from .configuration_gpt2 import GPT2Config
-from rope import RotaryPosEncoding
+from models.rope import RotaryPosEncoding
 
 import torch.nn.functional as F
 
