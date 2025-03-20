@@ -43,6 +43,7 @@ def main(args):
         has_positional_encodings=not args.no_pos_encodings,
         geometric_attention=args.geometric_attention,
         alibi=args.alibi,
+        rope=args.rope,
         _attn_implementation_autoset=False,
         _attn_implementation="eager",
     )
@@ -142,6 +143,7 @@ if __name__ == "__main__":
     parser.add_argument('--no_pos_encodings', action='store_true', help="No positional encodings")
     parser.add_argument('--geometric_attention', action='store_true', help="Use geometric attention")
     parser.add_argument('--alibi', action='store_true', help="Use alibi position biases")
+    parser.add_argument('--rope', action='store_true', help="Use RoPE (Rotary Positional Embeddings)")
 
     # Training arguments
     parser.add_argument('--run_name', type=str, default="run_name", help="Run name")
