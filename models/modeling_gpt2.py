@@ -207,7 +207,7 @@ class GPT2Attention(nn.Module):
             self.register_buffer("alibi_m", get_alibi_slope(self.num_heads))
 
         if getattr(self.config, "rope", False):
-            self.rope = RotaryPosEncoding(self.embed_dim)
+            self.rope = RotaryPosEncoding(self.embed_dim // self.num_heads, seq_dim=2)
         
         ### NEW CODE ###
 

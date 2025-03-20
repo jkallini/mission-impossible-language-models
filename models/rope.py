@@ -7,7 +7,7 @@ from typing import Tuple, Optional
 
 class RotaryPosEncoding(torch.nn.Module):
     # RoPE based on: https://www.kaggle.com/code/aeryss/rotary-postitional-encoding-rope-pytorch
-    def __init__(self, d_model: int, base=10000, seq_dim: int = 2):
+    def __init__(self, d_model: int, base=10000, seq_dim: int = 1):
         super().__init__()
 
         if d_model % 2 != 0:
@@ -49,8 +49,12 @@ class RotaryPosEncoding(torch.nn.Module):
             freqs = torch.einsum("...i,j->...ij", t, self.inv_freq)
             emb = torch.cat((freqs, freqs), dim=-1).to(x.device)
 
-            tgt_shape = list(x.shape)
-            tgt_shape[0] = -1   # Support batching
+            tgt_shape = [1] * x.ndim
+            tgt_shape[self.seq_dim] = seq_len
+            tgt_shape[-1] = x.shape[-1]
+
+            # support batch.
+            tgt_shape[0] = -1
 
             cos = emb.cos().view(*tgt_shape)
             sin = emb.sin().view(*tgt_shape)
