@@ -1,25 +1,18 @@
-# coding=utf-8
-# Copyright 2018 The OpenAI Team Authors and HuggingFace Inc. team.
-# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# Custom GPT-2 implementation that supports architecture variants like
+# - Geometric attention
+# - ALiBi
+# - Rotary embeddings (RoPE)
+# - No positional encodings
+# - Per-layer attention masks
+# Code is adapted from Hugging Face's Transformers library:
+# https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py
 """PyTorch OpenAI GPT-2 model."""
 
 import math
 import os
 import warnings
 from dataclasses import dataclass
-from typing import Optional, Tuple, Union
+from typing import Optional, Tuple, Union, Sequence
 
 import torch
 import torch.utils.checkpoint
@@ -1071,6 +1064,7 @@ class GPT2Model(GPT2PreTrainedModel):
         input_ids: Optional[torch.LongTensor] = None,
         past_key_values: Optional[Tuple[Tuple[torch.Tensor]]] = None,
         attention_mask: Optional[torch.FloatTensor] = None,
+        attention_masks: Optional[Sequence[torch.FloatTensor]] = None,
         token_type_ids: Optional[torch.LongTensor] = None,
         position_ids: Optional[torch.LongTensor] = None,
         head_mask: Optional[torch.FloatTensor] = None,
@@ -1089,6 +1083,11 @@ class GPT2Model(GPT2PreTrainedModel):
         use_cache = use_cache if use_cache is not None else self.config.use_cache
         return_dict = return_dict if return_dict is not None else self.config.use_return_dict
 
+        ### NEW CODE ###
+        if sum(x is not None for x in [attention_mask, attention_masks]) > 1:
+            raise ValueError("Only one of 'attention_mask' or 'attention_masks' should be specified.")
+        ### NEW CODE ###
+
         if input_ids is not None and inputs_embeds is not None:
             raise ValueError("You cannot specify both input_ids and inputs_embeds at the same time")
         elif input_ids is not None:
@@ -1101,6 +1100,19 @@ class GPT2Model(GPT2PreTrainedModel):
             batch_size = inputs_embeds.shape[0]
         else:
             raise ValueError("You have to specify either input_ids or inputs_embeds")
+
+        #### NEW CODE ####
+        if attention_masks is not None:
+            # GPT2Attention mask.
+            if not isinstance(attention_masks, Sequence):
+                raise ValueError(
+                    f"attention_mask sequence with length={self.config.n_layer} layers is required"
+                )
+            if len(attention_masks) != self.config.n_layer:
+                raise ValueError(
+                    f"Attention mask num layers does not match model config num layers: got {len(attention_mask)}, but expected {self.config.n_layer}"
+                )
+        #### NEW CODE ####
 
         device = input_ids.device if input_ids is not None else inputs_embeds.device
 
@@ -1198,6 +1210,15 @@ class GPT2Model(GPT2PreTrainedModel):
         all_cross_attentions = () if output_attentions and self.config.add_cross_attention else None
         all_hidden_states = () if output_hidden_states else None
         for i, (block, layer_past) in enumerate(zip(self.h, past_key_values)):
+
+            #### NEW CODE ####
+            if attention_masks:
+                attention_mask = attention_masks[i].view(batch_size, -1)
+                attention_mask = attention_mask[:, None, None, :]
+                attention_mask = attention_mask.to(dtype=self.dtype)  # fp16 compatibility
+                attention_mask = (1.0 - attention_mask) * torch.finfo(self.dtype).min
+            #### NEW CODE ####
+
             # Model parallel
             if self.model_parallel:
                 torch.cuda.set_device(hidden_states.device)
