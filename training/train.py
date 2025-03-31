@@ -22,7 +22,7 @@ os.environ["WANDB_PROJECT"] = "mission-impossible"
 def main(args):
 
     # Load the custom BabyLMCorpus dataset
-    builder = BabyLMCorpus(config_name=f"babylm_{args.perturbation_type}_{args.train_set}_seed{args.random_seed}")
+    builder = BabyLMCorpus(config_name=f"babylm_{args.perturbation_type}_{args.train_set}")
     builder.download_and_prepare()
     dataset = builder.as_dataset()
 
@@ -108,12 +108,15 @@ def main(args):
         mlm=False
     )
 
+    train_dataset = dataset["train"].shuffle(seed=args.random_seed)
+    eval_dataset = dataset["validation"].shuffle(seed=args.random_seed)
+
     # Initialize Trainer
     trainer = Trainer(
         model=model,
         args=training_args,
-        train_dataset=dataset["train"],
-        eval_dataset=dataset["validation"],
+        train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
         tokenizer=tokenizer,
         data_collator=data_collator,
     )

@@ -10,7 +10,6 @@ import logging
 import os
 import glob
 import tqdm
-from numpy.random import default_rng
 from itertools import product
 
 from utils import PERTURBATIONS, BABYLM_DATA_PATH
@@ -24,14 +23,13 @@ _DESCRIPTION = """\
 """
 _PERTURBED_DATA_PATH = f"{BABYLM_DATA_PATH}/babylm_data_perturbed"
 _PERTURBATIONS = PERTURBATIONS.keys()
-_RANDOM_SEEDS = [0, 14, 41, 53, 96]
 _TRAIN_SETS = ["100M", "10M"]
 _EOS_TOKEN_ID = 50256
 
 
 class BabyConfig(datasets.BuilderConfig):
 
-    def __init__(self, data_dir, babylm_train_set, random_seed, **kwargs):
+    def __init__(self, data_dir, babylm_train_set, **kwargs):
         """BuilderConfig for IzParens
 
         Args:
@@ -42,18 +40,16 @@ class BabyConfig(datasets.BuilderConfig):
         )
         self.data_dir = data_dir
         self.babylm_train_set = babylm_train_set
-        self.random_seed = random_seed
 
 
 class BabyLMCorpus(datasets.GeneratorBasedBuilder):
     BUILDER_CONFIGS = [
         BabyConfig(
-            name=f"babylm_{perturbation}_{train_set}_seed{random_seed}",
+            name=f"babylm_{perturbation}_{train_set}",
             data_dir=os.path.join(
                 _PERTURBED_DATA_PATH, "babylm_" + perturbation),
             babylm_train_set=train_set,
-            random_seed=random_seed,
-        ) for perturbation, train_set, random_seed in list(product(_PERTURBATIONS, _TRAIN_SETS, _RANDOM_SEEDS))
+        ) for perturbation, train_set in list(product(_PERTURBATIONS, _TRAIN_SETS))
     ]
 
     def _info(self):
@@ -77,12 +73,12 @@ class BabyLMCorpus(datasets.GeneratorBasedBuilder):
             datasets.SplitGenerator(
                 name=datasets.Split.TRAIN,
                 gen_kwargs={"data_dir": os.path.join(
-                    self.config.data_dir, "babylm_" + self.config.babylm_train_set), "random_seed": self.config.random_seed, "split": "train"},
+                    self.config.data_dir, "babylm_" + self.config.babylm_train_set), "split": "train"},
             ),
             datasets.SplitGenerator(
                 name=datasets.Split.VALIDATION,
                 gen_kwargs={"data_dir": os.path.join(
-                    self.config.data_dir, "babylm_dev"), "random_seed": self.config.random_seed, "split": "valid"},
+                    self.config.data_dir, "babylm_dev"), "split": "valid"},
             )
         ]
 
@@ -114,7 +110,7 @@ class BabyLMCorpus(datasets.GeneratorBasedBuilder):
 
         return chunked_tokens
 
-    def _generate_examples(self, data_dir, random_seed, split):
+    def _generate_examples(self, data_dir, split):
         """This function returns the BabyLM text in the discretized, tokenized form."""
 
         logger.info("Generating examples from = %s", data_dir)
@@ -126,10 +122,6 @@ class BabyLMCorpus(datasets.GeneratorBasedBuilder):
             f = open(infile, encoding="utf-8")
             all_sentences.extend(f.readlines())
         logger.info("Total sentences: {}".format(len(all_sentences)))
-
-        # Shuffle because we are pre-tokenizing
-        rng = default_rng(seed=random_seed)
-        rng.shuffle(all_sentences)
 
         # Tokenize and chunk
         tokenized_lines = self.__chunk(all_sentences, _EOS_TOKEN_ID)
