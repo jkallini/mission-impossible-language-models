@@ -243,7 +243,7 @@ if __name__ == "__main__":
 
     # Load dataset (only json files containing tagged data)
     babylm_dataset = args.babylm_dataset
-    json_ext = "_parsed.json"
+    json_ext = "_dep.json"
     babylm_data = glob(f"{BABYLM_DATA_PATH}/babylm_data/babylm_{babylm_dataset}/*{json_ext}")
 
     # Get perturbation, affect, and filter functions
