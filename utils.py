@@ -845,7 +845,7 @@ PERTURBATIONS = {
         "color": "#03a0ff",
         "model_upload_name": "word-hop",
     },
-    "control_agreement": {
+    "agreement_control": {
         "perturbation_function": perturb_control_agreement,
         "affect_function": affect_all,
         "filter_function": filter_all,
@@ -853,7 +853,7 @@ PERTURBATIONS = {
         "color": None,
         "model_upload_name": None,
     },
-    "local_agreement": {
+    "agreement_local": {
         "perturbation_function": perturb_local_agreement,
         "affect_function": affect_all,
         "filter_function": filter_all,
@@ -861,7 +861,7 @@ PERTURBATIONS = {
         "color": None,
         "model_upload_name": None,
     },
-    "linear_negation": {
+    "negation_linear": {
         "perturbation_function": partial(__perturb_neg_tokens, marker_neg_token=marker_neg_token),
         "affect_function": affect_neg,
         "filter_function": filter_neg,
