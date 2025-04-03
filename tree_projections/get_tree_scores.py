@@ -18,7 +18,7 @@ from utils import (
 from models.modeling_gpt2 import GPT2Model
 from tree_projection import TreeProjection
 
-FILE_SAMPLE_SIZE = 100
+FILE_SAMPLE_SIZE = 1000
 MAX_SEQ_LEN = 1024
 
 def load_model(run_name, random_seed, perturbation_type, train_set, ckpt=3000):
@@ -56,7 +56,7 @@ def compute_tree_metric(model, samples):
             input_ids=input_ids,
             projection_algorithm="dp"
         )
-        all_scores.append(score)
+        all_scores.append(score / len(input_ids))  # Normalize score by sequence length
     return np.mean(all_scores), np.std(all_scores)
 
 def main():
