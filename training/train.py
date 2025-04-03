@@ -16,6 +16,7 @@ from models.modeling_gpt2 import GPT2LMHeadModel
 from models.configuration_gpt2 import GPT2Config
 from babylm_dataset import BabyLMCorpus
 from utils import PERTURBATIONS, CHECKPOINT_PATH
+from transformers.trainer_utils import get_last_checkpoint
 
 os.environ["WANDB_PROJECT"] = "mission-impossible"
 
@@ -48,6 +49,10 @@ def main(args):
         _attn_implementation="eager",
     )
 
+    print("Perturbation type:", args.perturbation_type)
+    print("Training set:", args.train_set)
+    print("Run name:", args.run_name)
+    print("Seed:", args.random_seed)
     print(config)
 
     # Initialize the GPT-2 model
@@ -121,8 +126,17 @@ def main(args):
         data_collator=data_collator,
     )
 
+    resume_from_checkpoint = False
+    if args.resume_from_checkpoint:
+        last_checkpoint = get_last_checkpoint(checkpoint_dir)
+        if last_checkpoint is not None:
+            print(f"Resuming from checkpoint: {last_checkpoint}")
+            resume_from_checkpoint = last_checkpoint
+        else:
+            print("No checkpoint found. Training from scratch.")
+
     # Start training
-    trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
 
 
 if __name__ == "__main__":
