@@ -9,6 +9,7 @@ wandb/
 # Log files
 kallini-job-*.out
 runs.md
+logs/
 
 # Results files
 *surprisal_results*/

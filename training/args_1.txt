@@ -1,0 +1,70 @@
+shuffle_nondeterministic 100M shuffle_nondeterministic_gpt2_seed6837 6837 
+shuffle_nondeterministic 100M shuffle_nondeterministic_geometric_attention_seed9769 9769 --geometric_attention
+shuffle_nondeterministic 100M shuffle_nondeterministic_alibi_seed6071 6071 --alibi
+shuffle_nondeterministic 100M shuffle_nondeterministic_no_pos_encodings_seed353 353 --no_pos_encodings
+shuffle_nondeterministic 100M shuffle_nondeterministic_rope_seed1328 1328 --rope
+shuffle_deterministic57 100M shuffle_deterministic57_gpt2_seed2291 2291 
+shuffle_deterministic57 100M shuffle_deterministic57_geometric_attention_seed3518 3518 --geometric_attention
+shuffle_deterministic57 100M shuffle_deterministic57_alibi_seed4055 4055 --alibi
+shuffle_deterministic57 100M shuffle_deterministic57_no_pos_encodings_seed5931 5931 --no_pos_encodings
+shuffle_deterministic57 100M shuffle_deterministic57_rope_seed4645 4645 --rope
+shuffle_local3 100M shuffle_local3_gpt2_seed4724 4724 
+shuffle_local3 100M shuffle_local3_geometric_attention_seed1078 1078 --geometric_attention
+shuffle_local3 100M shuffle_local3_alibi_seed5326 5326 --alibi
+shuffle_local3 100M shuffle_local3_no_pos_encodings_seed4545 4545 --no_pos_encodings
+shuffle_local3 100M shuffle_local3_rope_seed2169 2169 --rope
+shuffle_control 100M shuffle_control_gpt2_seed7694 7694 
+shuffle_control 100M shuffle_control_geometric_attention_seed2547 2547 --geometric_attention
+shuffle_control 100M shuffle_control_alibi_seed3816 3816 --alibi
+shuffle_control 100M shuffle_control_no_pos_encodings_seed985 985 --no_pos_encodings
+shuffle_control 100M shuffle_control_rope_seed417 417 --rope
+reverse_full 100M reverse_full_gpt2_seed7 7 
+reverse_full 100M reverse_full_geometric_attention_seed5938 5938 --geometric_attention
+reverse_full 100M reverse_full_alibi_seed8243 8243 --alibi
+reverse_full 100M reverse_full_no_pos_encodings_seed6115 6115 --no_pos_encodings
+reverse_full 100M reverse_full_rope_seed7369 7369 --rope
+reverse_partial 100M reverse_partial_gpt2_seed9357 9357 
+reverse_partial 100M reverse_partial_geometric_attention_seed2782 2782 --geometric_attention
+reverse_partial 100M reverse_partial_alibi_seed6747 6747 --alibi
+reverse_partial 100M reverse_partial_no_pos_encodings_seed654 654 --no_pos_encodings
+reverse_partial 100M reverse_partial_rope_seed9307 9307 --rope
+reverse_control 100M reverse_control_gpt2_seed8883 8883 
+reverse_control 100M reverse_control_geometric_attention_seed5075 5075 --geometric_attention
+reverse_control 100M reverse_control_alibi_seed6789 6789 --alibi
+reverse_control 100M reverse_control_no_pos_encodings_seed2436 2436 --no_pos_encodings
+reverse_control 100M reverse_control_rope_seed4214 4214 --rope
+hop_words4 100M hop_words4_gpt2_seed6234 6234 
+hop_words4 100M hop_words4_geometric_attention_seed3494 3494 --geometric_attention
+hop_words4 100M hop_words4_alibi_seed8264 8264 --alibi
+hop_words4 100M hop_words4_no_pos_encodings_seed5225 5225 --no_pos_encodings
+hop_words4 100M hop_words4_rope_seed3248 3248 --rope
+hop_tokens4 100M hop_tokens4_gpt2_seed8545 8545 
+hop_tokens4 100M hop_tokens4_geometric_attention_seed7623 7623 --geometric_attention
+hop_tokens4 100M hop_tokens4_alibi_seed3537 3537 --alibi
+hop_tokens4 100M hop_tokens4_no_pos_encodings_seed9551 9551 --no_pos_encodings
+hop_tokens4 100M hop_tokens4_rope_seed7728 7728 --rope
+hop_control 100M hop_control_gpt2_seed8889 8889 
+hop_control 100M hop_control_geometric_attention_seed5198 5198 --geometric_attention
+hop_control 100M hop_control_alibi_seed7132 7132 --alibi
+hop_control 100M hop_control_no_pos_encodings_seed7932 7932 --no_pos_encodings
+hop_control 100M hop_control_rope_seed8191 8191 --rope
+agreement_local 100M agreement_local_gpt2_seed7013 7013 
+agreement_local 100M agreement_local_geometric_attention_seed4377 4377 --geometric_attention
+agreement_local 100M agreement_local_alibi_seed1242 1242 --alibi
+agreement_local 100M agreement_local_no_pos_encodings_seed150 150 --no_pos_encodings
+agreement_local 100M agreement_local_rope_seed1316 1316 --rope
+agreement_control 100M agreement_control_gpt2_seed7017 7017 
+agreement_control 100M agreement_control_geometric_attention_seed1626 1626 --geometric_attention
+agreement_control 100M agreement_control_alibi_seed4170 4170 --alibi
+agreement_control 100M agreement_control_no_pos_encodings_seed8297 8297 --no_pos_encodings
+agreement_control 100M agreement_control_rope_seed802 802 --rope
+negation_linear 100M negation_linear_gpt2_seed1318 1318 
+negation_linear 100M negation_linear_geometric_attention_seed5948 5948 --geometric_attention
+negation_linear 100M negation_linear_alibi_seed2343 2343 --alibi
+negation_linear 100M negation_linear_no_pos_encodings_seed522 522 --no_pos_encodings
+negation_linear 100M negation_linear_rope_seed1291 1291 --rope
+negation_control 100M negation_control_gpt2_seed6857 6857 
+negation_control 100M negation_control_geometric_attention_seed5767 5767 --geometric_attention
+negation_control 100M negation_control_alibi_seed3137 3137 --alibi
+negation_control 100M negation_control_no_pos_encodings_seed7370 7370 --no_pos_encodings
+negation_control 100M negation_control_rope_seed2916 2916 --rope
