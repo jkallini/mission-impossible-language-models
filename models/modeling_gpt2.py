@@ -46,6 +46,7 @@ from transformers.utils import (
 from transformers.utils.model_parallel_utils import assert_device_map, get_device_map
 from .configuration_gpt2 import GPT2Config
 from models.rope import RotaryPosEncoding
+from models.geometric_attention import gatt
 
 import torch.nn.functional as F
 
@@ -59,24 +60,6 @@ _CHECKPOINT_FOR_DOC = "openai-community/gpt2"
 _CONFIG_FOR_DOC = "GPT2Config"
 
 #### NEW CODE ####
-def gatt(att: torch.Tensor) -> torch.Tensor:
-    """
-    Geometric attention. Replaces softmax function.
-    """
-    
-    att = att.float()
-    # Numerically stable implementaiton from https://openreview.net/pdf?id=r8J3DSD5kF
-
-    prev = F.softplus(att, threshold=15)
-
-    # cumsum from right to left
-    prevs = prev.cumsum(dim=-1)
-    prevs = prev + prevs[..., -1:] - prevs
-
-    res = att - prevs
-    res = res.exp()
-    return res
-
 
 def get_relative_positions(seq_len: int) -> torch.tensor:
     x = torch.arange(seq_len)[None, :]
@@ -91,6 +74,7 @@ def get_alibi_slope(num_heads):
         .unsqueeze(-1)
         .unsqueeze(-1)
     )
+
 #### NEW CODE ####
 
 
