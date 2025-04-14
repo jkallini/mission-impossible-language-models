@@ -7,11 +7,11 @@ sys.path.append("..")
 from utils import PERTURBATIONS
 
 perturbations = ["shuffle_nondeterministic", "shuffle_deterministic57", "shuffle_local3", "shuffle_control",
-                 "reverse_full", "reverse_partial", "reverse_control",
                  "hop_words4", "hop_tokens4", "hop_control",
+                 "reverse_full", "reverse_partial", "reverse_control",
                  "agreement_local", "agreement_control",
                  "negation_linear", "negation_control"]
-arch_options = ["", "--geometric_attention", "--alibi", "--no_pos_encodings", "--rope"]
+arch_options = ["", "--alibi", "--rope"] #  "--geometric_attention",  "--no_pos_encodings"
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser()
