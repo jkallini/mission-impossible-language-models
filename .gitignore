@@ -12,6 +12,8 @@ runs.md
 logs/
 
 # Results files
+*phrase_data/
+*probing_results/
 *surprisal_results*/
 syntaxgym_eval/results/
 
