@@ -5,10 +5,12 @@
 import sys
 sys.path.append("..")
 
-from transformers import GPT2LMHeadModel
-from gpt2_no_positional_encoding_model import GPT2NoPositionalEncodingLMHeadModel
-from utils import CHECKPOINT_READ_PATH, PERTURBATIONS, BABYLM_DATA_PATH, \
-    PAREN_MODELS, gpt2_original_tokenizer
+from utils import (
+    PERTURBATIONS,
+    BABYLM_DATA_PATH,
+    gpt2_original_tokenizer,
+    load_impossible_lm,
+)
 from tqdm import tqdm
 from glob import glob
 from numpy.random import default_rng
@@ -20,8 +22,8 @@ import os
 
 
 MAX_TRAINING_STEPS = 3000
-CHECKPOINTS = list(range(100, MAX_TRAINING_STEPS+1, 100))
-
+CHECKPOINTS = list(range(200, MAX_TRAINING_STEPS+1, 200))
+MAX_SEQ_LEN = 1024
 
 def create_attention_mask(token_lists):
     seq_length = max([len(i) for i in token_lists])
@@ -77,8 +79,8 @@ def get_perplexities(model, token_lists, pad_token_id, device="cuda"):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
-        prog='Edge probing',
-        description='Edge probing experiments')
+        prog='Get perplexities on test sets for different impossible LM checkpoints',
+        description='Get perplexities')
     parser.add_argument('perturbation_type',
                         default='all',
                         const='all',
@@ -97,23 +99,11 @@ if __name__ == "__main__":
                         nargs='?',
                         choices=["100M", "10M"],
                         help='BabyLM train set')
+    parser.add_argument('run_name', type=str, default="run_name", help="Run name")
     parser.add_argument('random_seed', type=int, help="Random seed")
-    parser.add_argument('paren_model',
-                        default='all',
-                        const='all',
-                        nargs='?',
-                        choices=list(PAREN_MODELS.keys()) + ["randinit"],
-                        help='Parenthesis model')
-    parser.add_argument('-np', '--no_pos_encodings', action='store_true',
-                        help="Train GPT-2 with no positional encodings")
 
     # Get args
     args = parser.parse_args()
-    no_pos_encodings_underscore = "_no_positional_encodings" if args.no_pos_encodings else ""
-
-    # Get path to model
-    model = f"babylm_{args.perturbation_type}_{args.train_set}_{args.paren_model}{no_pos_encodings_underscore}_seed{args.random_seed}"
-    model_path = f"{CHECKPOINT_READ_PATH}/babylm_{args.perturbation_type}_{args.train_set}_{args.paren_model}{no_pos_encodings_underscore}/{model}/runs/{model}/checkpoint-"
 
     # Get perturbed test files
     test_files = sorted(glob(
@@ -123,7 +113,7 @@ if __name__ == "__main__":
     rng = default_rng(args.random_seed)
 
     # Iterate over data files to get perplexity data
-    print("Sampling BabyLM affected test files to extract surprisals...")
+    print("Sampling BabyLM affected test files to extract perplexities...")
     token_sequences = []
     for test_file in test_files:
         print(test_file)
@@ -132,8 +122,11 @@ if __name__ == "__main__":
         f = open(test_file, 'r')
         file_token_sequences = [
             [int(s) for s in l.split()] for l in f.readlines()]
+        
+        print(f"Number of affected sentences in file: {len(file_token_sequences)}")
+
         sample_indices = rng.choice(
-            list(range(len(file_token_sequences))), FILE_SAMPLE_SIZE, replace=False)
+            list(range(len(file_token_sequences))), FILE_SAMPLE_SIZE, replace=True)
         file_token_sequences = [file_token_sequences[i]
                                 for i in sample_indices]
         token_sequences.extend(file_token_sequences)
@@ -152,17 +145,19 @@ if __name__ == "__main__":
         print(f"Checkpoint: {ckpt}")
 
         # Load model
-        if args.no_pos_encodings:
-            model = GPT2NoPositionalEncodingLMHeadModel.from_pretrained(
-                model_path + str(ckpt)).to(device)
-        else:
-            model = GPT2LMHeadModel.from_pretrained(
-            model_path + str(ckpt)).to(device)
+        model = load_impossible_lm(
+            args.run_name,
+            args.perturbation_type,
+            args.train_set,
+            args.random_seed,
+            ckpt,
+            device,
+        )
 
         # Get perplexities
         perplexities = []
         for i in tqdm(range(0, len(token_sequences), BATCH_SIZE)):
-            batch = token_sequences[i:i+BATCH_SIZE]
+            batch = [seq[:MAX_SEQ_LEN] for seq in token_sequences[i:i+BATCH_SIZE]]
             ppls = get_perplexities(
                 model, batch, gpt2_original_tokenizer.eos_token_id)
             perplexities.extend(ppls)
@@ -171,10 +166,10 @@ if __name__ == "__main__":
         ppl_df[f'Perplexities (ckpt {ckpt})'] = perplexities
 
     # Write results to CSV
-    directory = f"perplexity_results/{args.perturbation_type}_{args.train_set}{no_pos_encodings_underscore}"
+    directory = f"perplexity_results/{args.perturbation_type}_{args.train_set}"
     if not os.path.exists(directory):
         os.makedirs(directory)
     file = directory + \
-        f"/{args.paren_model}_seed{args.random_seed}_test_{args.test_perturbation_type}.csv"
+        f"/{args.run_name}_seed{args.random_seed}_test_{args.test_perturbation_type}.csv"
     print(f"Writing results to CSV: {file}")
     ppl_df.to_csv(file)

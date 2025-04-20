@@ -8,13 +8,14 @@ from functools import partial
 from numpy.random import default_rng
 import torch
 from lemminflect import getInflection
+from models.modeling_gpt2 import GPT2LMHeadModel
 
 ##############################################################################
 # CONSTANTS
 ##############################################################################
 
 BASE_PATH = "/nlp/scr3/nlp/llms-in-llms/mission-impossible" # Update this to the path of your project
-CHECKPOINT_PATH = f"{BASE_PATH}/models"
+CHECKPOINT_PATH = f"{BASE_PATH}/models_new/apr7_run"
 BABYLM_DATA_PATH = f"{BASE_PATH}/babylm_data"
 BABYLM_SPLITS = ['100M', '10M', 'dev', 'test', 'unittest']
 SEEDS = [21, 57, 84]
@@ -102,6 +103,13 @@ marker_neg_token = gpt2_neg_tokenizer.get_added_vocab()[
 
 
 MARKER_TOKEN_IDS = [marker_sg_token, marker_pl_token, marker_rev_token, marker_neg_token]
+
+
+def load_impossible_lm(run_name, perturbation_type, train_set, random_seed, ckpt, device="cuda"):
+    # Get path to model
+    model = f"{run_name}_seed{random_seed}"
+    model_path = f"{CHECKPOINT_PATH}/{perturbation_type}_{train_set}/{model}/checkpoints/checkpoint-{ckpt}"
+    return GPT2LMHeadModel.from_pretrained(model_path).to(device)
 
 
 def compute_surprisals(model, input_ids):
@@ -618,6 +626,10 @@ def affect_neg(sent):
     return any([__affect_linear_neg(word, head) for word in sent['word_annotations']]) and head != -1
 
 
+def affect_aggreement(sent):
+    return __perturb_local_agreement(sent) != __perturb_control_agreement(sent)
+
+
 def affect_all(sent):
     return True
 
@@ -847,18 +859,18 @@ PERTURBATIONS = {
     },
     "agreement_control": {
         "perturbation_function": perturb_control_agreement,
-        "affect_function": affect_all,
+        "affect_function": affect_aggreement,
         "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_original_tokenizer,
-        "color": None,
+        "color": "#008f24",
         "model_upload_name": None,
     },
     "agreement_local": {
         "perturbation_function": perturb_local_agreement,
-        "affect_function": affect_all,
+        "affect_function": affect_aggreement,
         "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_original_tokenizer,
-        "color": None,
+        "color": "#638eeb",
         "model_upload_name": None,
     },
     "negation_linear": {
@@ -866,7 +878,7 @@ PERTURBATIONS = {
         "affect_function": affect_neg,
         "filter_function": filter_neg,
         "gpt2_tokenizer": gpt2_neg_tokenizer,
-        "color": None,
+        "color": "#7226ff",
         "model_upload_name": None,
     },
     "negation_control": {
@@ -874,7 +886,7 @@ PERTURBATIONS = {
         "affect_function": affect_neg,
         "filter_function": filter_neg,
         "gpt2_tokenizer": gpt2_neg_tokenizer,
-        "color": None,
+        "color": "#ce80ff",
         "model_upload_name": None,
     }
 }
