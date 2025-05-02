@@ -16,7 +16,7 @@ runs.md
 *phrase_data/
 *probing_results/
 *surprisal_results*/
-*perplexity_results/
+*perplexity_results*/
 syntaxgym_eval/results/
 
 # Models
