@@ -1,0 +1,90 @@
+reverse_full 100M reverse_full_gpt2_seed7154 7154 
+reverse_full 100M reverse_full_gpt2_seed4357 4357 
+reverse_full 100M reverse_full_gpt2_seed640 640 
+reverse_full 100M reverse_full_alibi_seed6353 6353 --alibi
+reverse_full 100M reverse_full_alibi_seed3293 3293 --alibi
+reverse_full 100M reverse_full_alibi_seed8319 8319 --alibi
+reverse_full 100M reverse_full_rope_seed8393 8393 --rope
+reverse_full 100M reverse_full_rope_seed5993 5993 --rope
+reverse_full 100M reverse_full_rope_seed3065 3065 --rope
+reverse_partial 100M reverse_partial_gpt2_seed9874 9874 
+reverse_partial 100M reverse_partial_gpt2_seed377 377 
+reverse_partial 100M reverse_partial_gpt2_seed5116 5116 
+reverse_partial 100M reverse_partial_alibi_seed8633 8633 --alibi
+reverse_partial 100M reverse_partial_alibi_seed6437 6437 --alibi
+reverse_partial 100M reverse_partial_alibi_seed765 765 --alibi
+reverse_partial 100M reverse_partial_rope_seed7505 7505 --rope
+reverse_partial 100M reverse_partial_rope_seed4201 4201 --rope
+reverse_partial 100M reverse_partial_rope_seed9351 9351 --rope
+reverse_control 100M reverse_control_gpt2_seed2848 2848 
+reverse_control 100M reverse_control_gpt2_seed4086 4086 
+reverse_control 100M reverse_control_gpt2_seed8547 8547 
+reverse_control 100M reverse_control_alibi_seed316 316 --alibi
+reverse_control 100M reverse_control_alibi_seed2847 2847 --alibi
+reverse_control 100M reverse_control_alibi_seed1321 1321 --alibi
+reverse_control 100M reverse_control_rope_seed8766 8766 --rope
+reverse_control 100M reverse_control_rope_seed4779 4779 --rope
+reverse_control 100M reverse_control_rope_seed8055 8055 --rope
+hop_words4 100M hop_words4_gpt2_seed9292 9292 
+hop_words4 100M hop_words4_gpt2_seed3667 3667 
+hop_words4 100M hop_words4_gpt2_seed9820 9820 
+hop_words4 100M hop_words4_alibi_seed389 389 --alibi
+hop_words4 100M hop_words4_alibi_seed5198 5198 --alibi
+hop_words4 100M hop_words4_alibi_seed5427 5427 --alibi
+hop_words4 100M hop_words4_rope_seed3687 3687 --rope
+hop_words4 100M hop_words4_rope_seed7912 7912 --rope
+hop_words4 100M hop_words4_rope_seed9730 9730 --rope
+hop_tokens4 100M hop_tokens4_gpt2_seed7254 7254 
+hop_tokens4 100M hop_tokens4_gpt2_seed6425 6425 
+hop_tokens4 100M hop_tokens4_gpt2_seed952 952 
+hop_tokens4 100M hop_tokens4_alibi_seed8005 8005 --alibi
+hop_tokens4 100M hop_tokens4_alibi_seed7944 7944 --alibi
+hop_tokens4 100M hop_tokens4_alibi_seed1332 1332 --alibi
+hop_tokens4 100M hop_tokens4_rope_seed8089 8089 --rope
+hop_tokens4 100M hop_tokens4_rope_seed5666 5666 --rope
+hop_tokens4 100M hop_tokens4_rope_seed4211 4211 --rope
+hop_control 100M hop_control_gpt2_seed810 810 
+hop_control 100M hop_control_gpt2_seed9980 9980 
+hop_control 100M hop_control_gpt2_seed5851 5851 
+hop_control 100M hop_control_alibi_seed5399 5399 --alibi
+hop_control 100M hop_control_alibi_seed1653 1653 --alibi
+hop_control 100M hop_control_alibi_seed1797 1797 --alibi
+hop_control 100M hop_control_rope_seed3796 3796 --rope
+hop_control 100M hop_control_rope_seed2714 2714 --rope
+hop_control 100M hop_control_rope_seed6393 6393 --rope
+agreement_local 100M agreement_local_gpt2_seed957 957 
+agreement_local 100M agreement_local_gpt2_seed9740 9740 
+agreement_local 100M agreement_local_gpt2_seed2402 2402 
+agreement_local 100M agreement_local_alibi_seed1864 1864 --alibi
+agreement_local 100M agreement_local_alibi_seed1239 1239 --alibi
+agreement_local 100M agreement_local_alibi_seed9273 9273 --alibi
+agreement_local 100M agreement_local_rope_seed2015 2015 --rope
+agreement_local 100M agreement_local_rope_seed165 165 --rope
+agreement_local 100M agreement_local_rope_seed8096 8096 --rope
+agreement_control 100M agreement_control_gpt2_seed4398 4398 
+agreement_control 100M agreement_control_gpt2_seed4467 4467 
+agreement_control 100M agreement_control_gpt2_seed7503 7503 
+agreement_control 100M agreement_control_alibi_seed5453 5453 --alibi
+agreement_control 100M agreement_control_alibi_seed8774 8774 --alibi
+agreement_control 100M agreement_control_alibi_seed6946 6946 --alibi
+agreement_control 100M agreement_control_rope_seed1138 1138 --rope
+agreement_control 100M agreement_control_rope_seed2007 2007 --rope
+agreement_control 100M agreement_control_rope_seed6304 6304 --rope
+negation_linear 100M negation_linear_gpt2_seed2855 2855 
+negation_linear 100M negation_linear_gpt2_seed6203 6203 
+negation_linear 100M negation_linear_gpt2_seed406 406 
+negation_linear 100M negation_linear_alibi_seed597 597 --alibi
+negation_linear 100M negation_linear_alibi_seed7631 7631 --alibi
+negation_linear 100M negation_linear_alibi_seed4054 4054 --alibi
+negation_linear 100M negation_linear_rope_seed4071 4071 --rope
+negation_linear 100M negation_linear_rope_seed6156 6156 --rope
+negation_linear 100M negation_linear_rope_seed5068 5068 --rope
+negation_control 100M negation_control_gpt2_seed381 381 
+negation_control 100M negation_control_gpt2_seed4640 4640 
+negation_control 100M negation_control_gpt2_seed7457 7457 
+negation_control 100M negation_control_alibi_seed7476 7476 --alibi
+negation_control 100M negation_control_alibi_seed4688 4688 --alibi
+negation_control 100M negation_control_alibi_seed84 84 --alibi
+negation_control 100M negation_control_rope_seed6950 6950 --rope
+negation_control 100M negation_control_rope_seed2766 2766 --rope
+negation_control 100M negation_control_rope_seed6805 6805 --rope

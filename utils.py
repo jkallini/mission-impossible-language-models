@@ -862,7 +862,7 @@ PERTURBATIONS = {
         "affect_function": affect_aggreement,
         "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_original_tokenizer,
-        "color": "#008f24",
+        "color": "#606060",
         "model_upload_name": None,
     },
     "agreement_local": {
@@ -870,7 +870,7 @@ PERTURBATIONS = {
         "affect_function": affect_aggreement,
         "filter_function": filter_all,
         "gpt2_tokenizer": gpt2_original_tokenizer,
-        "color": "#638eeb",
+        "color": "#008f24",
         "model_upload_name": None,
     },
     "negation_linear": {
@@ -886,7 +886,7 @@ PERTURBATIONS = {
         "affect_function": affect_neg,
         "filter_function": filter_neg,
         "gpt2_tokenizer": gpt2_neg_tokenizer,
-        "color": "#ce80ff",
+        "color": "#606060",
         "model_upload_name": None,
     }
 }

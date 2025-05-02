@@ -9,12 +9,14 @@ wandb/
 # Log files
 kallini-job-*.out
 runs.md
-logs/
+*logs/
 
 # Results files
+*_parses.test
 *phrase_data/
 *probing_results/
 *surprisal_results*/
+*perplexity_results/
 syntaxgym_eval/results/
 
 # Models

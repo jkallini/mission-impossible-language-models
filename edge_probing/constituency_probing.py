@@ -83,8 +83,8 @@ def mean_pooling(tensor, index_tuples):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
-        prog='Edge probing',
-        description='Edge probing experiments')
+        prog='Constituency probing',
+        description='Constituency probing experiments')
     parser.add_argument('perturbation_type',
                         default='all',
                         const='all',
@@ -126,9 +126,13 @@ if __name__ == "__main__":
 
     # Get constituency parse data
     if "hop" in args.perturbation_type:
-        phrase_df = pd.read_csv("phrase_data/hop_constituent_span_data.csv")
+        phrase_df = pd.read_csv("phrase_data/hop_constituent_probe_spans.csv")
     elif "reverse" in args.perturbation_type:
-        phrase_df = pd.read_csv("phrase_data/reverse_constituent_span_data.csv")
+        phrase_df = pd.read_csv("phrase_data/reverse_constituent_probe_spans.csv")
+    elif "negation" in args.perturbation_type:
+        phrase_df = pd.read_csv("phrase_data/negation_constituent_probe_spans.csv")
+    elif "agreement" in args.perturbation_type:
+        phrase_df = pd.read_csv("phrase_data/agreement_constituent_probe_spans.csv")
     else:
         raise Exception("Phrase data not found")
 
@@ -139,7 +143,7 @@ if __name__ == "__main__":
     else:
         indices = list(zip(phrase_df["Start Index"], phrase_df["End Index"]))
 
-    labels = list(phrase_df["IsConstituent"])
+    labels = list(phrase_df["Label"])
 
     BATCH_SIZE = 32
     device = "cuda"
@@ -187,7 +191,7 @@ if __name__ == "__main__":
                 X, y, test_size=0.2, random_state=args.random_seed)
 
             # Fit L2-regularized linear classifier
-            clf = LogisticRegression(max_iter=10,
+            clf = LogisticRegression(solver='saga', max_iter=1000,
                                      random_state=args.random_seed).fit(X_train, y_train)
 
             # Get probe accuracy
@@ -199,7 +203,8 @@ if __name__ == "__main__":
         edge_probing_df[f"Accuracy (ckpt {ckpt})"] = layer_accuracies
 
     # Write results to CSV
-    directory = f"constituency_probing_results/{args.run_name}"
+    run_name_dir = "_".join(args.run_name.split("_")[:-1])
+    directory = f"constituency_probing_results/{run_name_dir}"
     if not os.path.exists(directory):
         os.makedirs(directory)
 

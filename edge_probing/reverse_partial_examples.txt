@@ -1,0 +1,262 @@
+Checkpoint: 200, Layer: 1
+Computing span embeddings...
+Example: Fischer says that these attacks, especially the kidnapping and murder of Hanns-Martin Schleyer, made him give up violence as a way to get political change.
+Phrase:  says that these attacks, especially the kidnapping and murder of Hann
+Example: In his child years, his family went to Manchuria after 1926, he joined to communist organization.
+Phrase:  to communist organization
+Example: So, because of the importance of this dark energy, the recognition of the accelerating expansion of the Universe was honored with the Nobel prize.
+Phrase:  energy, the recognition of
+Example: OSS also established the research techniques and methods, evaluated materials, and worked directly with the officers in the collection of data and writing of text.
+Phrase:  the collection of data and writing of text
+Example: Usually a laborer or craftsman would have to work three to seven years in exchange for the cost of transportation across the ocean, food, clothing, land, a place to live and other things they needed to live or work during their contract.
+Phrase:  live or work during
+Example: As that day wore on, and with each day that succeeded it, he felt a wearier disgust with himself and his surroundings.
+Phrase: , he felt a
+Example: On the M four westbound at the junction Slough, junction six which is Slough, traffic's very heavy and slow.
+Phrase: ough, traffic's very
+Example: That man I was betting against just now - He's employed by your boss, is he not?
+Phrase:  betting against just now
+Example: You smothered her when you slept on your face for 20 years.
+Phrase:  smothered her when you slept
+Example: So if you had weight 1, plus weight 2, plus-- if I were to add all 14 books, that's just the weights of all the 14 books, and I were to divide by 14, that is equal to p.
+Phrase: , and I were to divide by 14
+Example: That one, and I had blue leggings on and everyone was going oh spot the legs, and then just going phew  when they walked into the shack or something   think, you know, I dunno, I'm just This toast is really nice.
+Phrase:  had blue leggings on
+Example: The rankings are based on a variety of factors such as standardized test scores of students, salary of recent graduates, survey results of graduates and/or recruiters, the specific schools that choose to participate in a market survey, the number of top companies recruiting at the school and a variety of attributes.
+Phrase:  in a market survey
+Example: Well I don't, you see this is where I think it's been sensationalised.
+Phrase: 's been sensationalised
+Example: "_Du reste_, you have only to look at her," said the Sister, "to see that, _comme famille, c'est le dessus du panier._"
+Phrase:  see that, _
+Example: sounds very exciting . and also laura told me that theresa zipped up her jacket by herself today at school . oh my goodness . you're getting so big .
+Phrase:  so big .
+Example: That began with the slaughter of 123 French-Algerian civilians, the murders of women and children, and the mutilation of corpses in Philippeville by the FLN on August 20 1955 and the death of some 50 Muslims.
+Phrase:  slaughter of 123 French
+Example: (cow moos) (theme song begins) My Little Pony, My Little Pony, ah, ah, ah, ah, (My Little Pony) Twilight: I used to wonder what friendship could be (My Little Pony)
+Phrase: My Little Pony
+Example: He was appointed in October 1985 by Ronald Reagan and took senior status on November 1, 2000.
+Phrase:  November 1,
+Example: After winning 33 national titles and setting 43 national records, Bossuyt retired from competitive swimming in May 2007.
+Phrase:  33 national titles
+Example: The thrushes are a group of birds that occur mainly in the Old World.
+Phrase:  of birds that occur mainly
+Example: Presently he sat down in the biggest cave and listened very carefully, and it seemed to him that he could distinguish three different sorts of noises.
+Phrase: Presently he
+Example: You grab somebody you think is cute, you drag them into our legendary tunnel of terror, and if you survive, you make out, high on the adrenaline rush.
+Phrase:  grab somebody you think is
+Example: She looked about for a stick, but there was not one to be seen, and if she went to look for one she would lose the peach.
+Phrase:  went to look for one
+Example: Casting aside the splintered spears, they drew their pistols from the saddle pockets.
+Phrase:  from the saddle pockets
+Example: Jimmy did not get the topsail up when they rowed away, but sat down on the coaming with his arm around Anthea's shoulder.
+Phrase:  get the topsail up when they rowed away
+Example: You're the first Archeologist I've met who uses dynamite Yes, well I have a number of occupations to be honest with you I'm something of an independent spirit which can get a man into trouble around here Hmm.
+Phrase:  occupations to be honest with you I'm something
+Example: In a word, it was felt that its immediate publication would obviate any possible misconception at some future time as to its true relation to MacDowell's artistic evolution.
+Phrase: owell's artistic
+Example: In May 2014, Jimmy Fallon, Seth Rogen and Zac Efron danced dressed as girls to the song during an episode of "The Tonight Show Starring Jimmy Fallon".
+Phrase: In May 2014
+Example: work of a man who was entitled to be taken seriously; if reviews had any influence (and it can scarcely be questioned that a favourable review has much) this one alone could not fail to bring 'Illusion' its fair share of attention.
+Phrase:  had any influence (and it can scarcely be questioned
+Example: On 30 April 1305, he was slain along with 300 cavalry and 1,000 infantry by the Alans, another group of foreign mercenaries at the service of the Emperor.
+Phrase:  at the service of the Emperor
+Example: House of Peoples of the Federation of Bosnia and Herzegovina The House of Peoples of the Federation of Bosnia and Herzegovina is an upper house of the Parliament of the Federation of Bosnia and Herzegovina, the lower being the House of Representatives.
+Phrase:  Peoples of the Federation of Bosnia and Herzegovina is an upper house of the Parliament of the Federation of Bosnia and Herzegov
+Example: She also holds positions in different committees of various national and international organizations.
+Phrase:  committees of various national and international organizations.
+Example: We're locked in here for tonight anyways Today we'll have an agreement of love Deal means..? heart heart..
+Phrase:  for tonight anyways
+Example: For if the proofs should be proposed without something of a reputation of this kind, they would lose, in the sequel, all the graces of novelty.
+Phrase:  something of a reputation of this kind, they would
+Example: Uh-huh. and we start out with EVENING SHADE and MAJOR DAD, Uh-huh. and I think that's the one night that we really try to watch television.
+Phrase:  and I think
+Example: He was forced to withdraw from the race when it was revealed that he was facing a charge of perjury.
+Phrase:  to withdraw from the race when it was revealed that he was facing a charge of perjury.
+Example: One of the people from Bleeding Kansas, John Brown, took over a town in Virginia in 1859 to make a point about slavery being wrong and to try to get slaves to fight their owners.
+Phrase:  Bleeding Kansas, John Brown, took over a town in Virginia in 1859 to make
+Example: Under his hat brim she could see his brows, heavy and straight and lifted whimsically at the inner points, as though he were thinking of something amusing.
+Phrase: Under his hat brim
+Example: In 2004, however, this synonymy was objected by Hänni who described and named a second species for "Ceresiosaurus", and by several other authors since.
+Phrase:  by several other authors
+Example: Faysal struggled with explaining the various tribes here why it was a good idea to rebel against the Ottoman empire.
+Phrase: Faysal struggled with
+Example: Early in the 20th century, Providence became the only capital of the state.
+Phrase:  of the state
+Example: If a person who is married takes part in adultery, that person's husband or wife would usually have the right to be able to go to court to divorce them.
+Phrase:  to be able to go to court to divorce them
+Example: So you have to make sure their engines fire at first crack.
+Phrase:  at first crack
+Example: He, being near the Sun, knows that it shines alike on Saint and Sinner--he feels that when God withholds his Sunbeams from his most disobedient child, then may he withhold his love from his most degraded brother or sister.
+Phrase:  from his most degraded brother
+Example: A soldier seized one of the tables within the café and tossed it through the open door.
+Phrase:  the open door
+Example: Normally it takes four weeks for hoppers to become adults, but when the conditions are right as now their development switches to the fast track.
+Phrase:  are right as now
+Example: He said to himself, perhaps, that if he had been in Townsend's place nothing in the world would have hindered him from making any sacrifice to gratify her smallest whim.
+Phrase:  in the world
+Example: Well, let's see, ﬁrst of all why don't we dispense with the mirthless chuckle.
+Phrase: rst of all why don't
+Example: Thanks to his very good standing with the Russian Imperial Family he later managed to alleviate the harsh terms of the peace negotiations when Finland was lost to Russia.
+Phrase:  his very good standing
+Example: But this was only a false alarm, for he himself very well knew what his scheme was.
+Phrase:  only a false alarm,
+Example: With more research and incentives, we can break our dependence on oil with biofuels, and become the first country to have 1 million electric vehicles on the road by 2015.
+Phrase: With more research and incentives
+Example: The state of Kerala is divided into 14 revenue districts.
+Phrase:  Kerala is divided into
+Example: This made Old Mr. Toad glare more angrily than ever , but he could n't say anything , not a word .
+Phrase:  a word .
+Example: How doth the little -- '' ' and she crossed her hands on her lap as if she were saying lessons , and began to repeat it , but her voice sounded hoarse and strange , and the words did not come the same as they used to do : -- ` How doth the little crocodile Improve his shining tail , And pour the waters of the Nile On every golden scale ! ` How cheerfully he seems to grin , How neatly spread his claws ,
+Phrase:  doth the little
+Example: On the day of the great festival, Ernest, with all the other people of the valley, left their work, and proceeded to the spot where the sylvan banquet was prepared.
+Phrase:  was prepared.
+Example: The approximate center is at the intersection of Swann and Rome Avenues just a few blocks east of SoHo.
+Phrase:  the intersection of Swann and Rome Avenues just a few blocks east of SoHo
+Example: The demand for resources can change with new technology, new needs, and new economics (e.g. changes in cost of the resources).
+Phrase:  in cost of the resources
+Example: She is pulling all of my hair out with her cat's brush!
+Phrase:  all of my hair
+Example: Pearce gets it away to Oldfield  well he's scored some really spectacular goals in his career David Oldfield and he wasn't far off with that shot.
+Phrase:  in his career
+Example: It was a torture to see him being harried by his own kind because he couldn't fly anymore.
+Phrase:  by his own kind
+Example: Pitamakan said that he had killed four men and seven women of his tribe, and then recounted the well-known tale of his fight with Big Lake.
+Phrase:  four men and seven women
+Example: Oerhaps I just want us to be a little less unhappy.
+Phrase: haps I just want us
+Example: Just tell me what to do to keep her safe and I'll do it.
+Phrase:  tell me what to do to keep her safe
+Example: A line would advance to about from the enemy line and fire in volley (all at the same time).
+Phrase:  at the same time
+Example: It began now to dawn upon Jim Britt by the morning light of what he read and heard and witnessed, that both Houses in their plan and movement were as simple as a wire fence; no more recondite than is a pair of shears.
+Phrase:  were as simple as a
+Example: "May I come and see the Manchu lady?" asked Kitty, suddenly raising her head.
+Phrase: May I come
+Example: mouth, she called out lazily between her closed teeth:  "Ayesha, bring a match and light my cigarette," and Ayesha, with a muttered Moslem imprecation, obeyed.
+Phrase:  between her closed teeth
+Example: In order to make her childhood dream of debuting in Japan come true, Younha underwent recording while going back and forth between Korea and Japan.
+Phrase:  going back and
+Example: memoirs he thus describes how he came to invent the trick:  “My two children were playing one day in the drawing-room at a game they had invented for their own amusement.
+Phrase:  their own amusement
+Example: They sold at retail for one dollar each, were worth, wholesale, seventy dollars a hundred, and our aggregate harvest of this one operation was, as I now remember, full sixty thousand dollars.
+Phrase:  now remember,
+Example: There are several small lakes in the parish; the main lakes are "Estanys Forcats", "Estany de Les Truites" and "Estany Negre".
+Phrase:  in the parish
+Example: This is because they are the two main survivors of a once huge group called the Archosaurs.
+Phrase:  a once huge group called the Archosaurs
+Example: Once, she threw a glance wistfully toward the windows, and caught a glimpse, through its red curtains, of the snow-covered roofs, and the stars glimmering frostily, and all the delicious intensity of the cold night.
+Phrase: -covered roofs
+Example: Then this time the underdog Vaqueros managed by Carmelo Martínez beat the highly favored Cangrejeros de Santurce of Mako Oliveras in the championship series, being guided by Baerga, who posted a .500 batting average with three RBI and seven runs scored, leading him subsequently to be named series MVP en route to the 2002 Caribbean Series.
+Phrase:  seven runs scored
+Example: And then, sometimes we would go to Arkansas where they came from and have a reunion with the entire group, you know.
+Phrase:  with the entire group
+Example: It has been fed upon the husks of the physical plane for so long that it is fairly starving for the proper nourishment.
+Phrase: It has been fed upon the husks of the physical plane for so long that it is fairly starving for the proper nour
+Example: The other thing is, you're probably getting L A P R, that's life assurance premium relief, on any contracts that were taken out prior to nineteen eighty four.
+Phrase: The other thing
+Example: Virginia, leaping out of the carriage, flew up the steps and into the outer office, and landed in the Colonel's arms.
+Phrase:  into the outer office
+Example: His eyes brightened at the sight of his wife and children, although he could not help uttering a word or two of surprise, at finding the whole family in the open air, on so bleak a day, and after sunset too.
+Phrase:  on so bleak a day
+Example: Sidonia Bogdan noted in "România Liberă" that in no other European country so many magistrates were pursuing PhD under the guidance of top politicians such as Gabriel Oprea and that the Superior Council of Magistracy should explain why this is happening.
+Phrase:  were pursuing PhD under the guidance of top politicians
+Example: It ended the effort by Marcus Tullius Cicero to make the Senate once again the top body of the Republic.
+Phrase:  Tullius Cicero to
+Example: "Audience judges" were selected in addition to several professional judges.
+Phrase:  several professional judges
+Example: The pear trees were in bloom, but where were the laughing children, the wives and maidens with wine and bread for the midday feast?
+Phrase:  wives and maid
+Example: The plump solemn Baby Jesus with his fingers in his mouth, the three-dimensional look of the figures and the lack of rich decoration make this picture look very different from most other altarpieces of this time, which were painted in a style called International Gothic.
+Phrase:  of this time
+Example: On 5 May 1623, records for the Council on New England say, "Christopher Levett to be a principal patentee; and to have a grant of of land."
+Phrase:  England say, "Christopher Le
+Example: They said that they had worked for over a thousand days making the branch of gold, with its silver twigs and its jeweled fruit, that was now presented to her by the Knight, but as yet they had received nothing in payment.
+Phrase:  worked for over
+Example: Some roasted asparagus and other recipe for mushrooms with a roasted asparagus.
+Phrase:  for mushrooms with a roasted asparagus
+Example: Waccabuc is known by many outside of the town for its Castle Rock.
+Phrase:  outside of the town
+Example: Many people in the Republic were scared of the Separatists, so they voted to give emergency powers to Supreme Chancellor Palpatine, the public identity of Darth Sidious.
+Phrase: Many people in the Republic
+Example: Born in Oxford, Barker was a Yeovil Town youth graduate before being promoted to the main squad in 2006, being assigned the 23 shirt.
+Phrase: Born in Oxford
+Example: Well, I think she had more focus however, honestly, I think you are more talented.
+Phrase:  think she had more focus
+Example: In English sentences, nouns can be used as a subject, object, or complement.
+Phrase: In English sentences
+Example: Different schools have different rules for what the Provost does, but most Provosts deal with issues about hiring and dismissing professors and giving out tenure, handling complaints about academic programs, and deciding what the general academic policies are for the school.
+Phrase:  complaints about academic programs, and deciding what
+Example: Though he has avoided shackling his music to a detailed programme, he has never very seriously espoused the sophistical compromise which concedes the legitimacy of programme-music provided it speaks as potently to one who does not know the subject-matter as to one who does.
+Phrase:  the subject-matter as to one who
+Example: The economy of the Camagüey province is primarily cattle and sugar (in the north and south) farming, and the province is known for its cowboy culture, with rodeos frequently held.
+Phrase:  for its cowboy culture
+Example: Two Armenian monthly newspapers have been founded on the island, Artsankank (1995) and Azad Tsayn (founded 2003), which provide national and international news, primarily in Armenian and with certain columns printed in Greek and in English.
+Phrase:  in Armenian and
+Example: This delaying action was also a large deception by the Confederate forces.
+Phrase:  a large deception by the Confederate forces
+Example: Vardar were the first team from Macedonia to play in either the Champions League or Europa League group stage.
+Phrase:  first team from Macedonia to play in either the Champions League or
+Example: The American ran to her with the smoking musket in his hand and seized her by the wrist.
+Phrase:  seized her by the wrist
+Example: Freiburg has many twin cities throughout the world: Iranian president Mahmoud Ahmadinejad's controversial comments, which included questioning the size of the Holocaust, have sparked questions about Freiburg's partnership with Isfahan.
+Phrase:  have sparked questions about Freib
+Example: Don't listen to him, lo. parker: and what you're asking evan to do, It's gonna be the last memory he has of you, It's gonna be the last thing he sees every night Before he goes to sleep.
+Phrase:  sees every night Before he goes to sleep
+Example: So you see going on there a great range of religious activity, and much of it of the type that does go back to the Buddha's time.
+Phrase:  a great range
+Example: “She’s incapable of seeing reason,” said Connelly; “incapable of seeing anything save money.
+Phrase: ; “inc
+Example: This means, you know, that that message is getting across erm to the erm people in the States.
+Phrase:  is getting across
+Example: I pretended not to see him until he said `` Good morning , '' in a voice vibrating and deep , which sounded as though it might become infinitely tender if its owner chose .
+Phrase:  become infinitely tender if its owner chose
+Example: Ibadan was the centre of administration of the old Western Region since the days of the British colonial rule, and parts of the city's ancient protective walls still stand to this day.
+Phrase:  of the old Western Region
+Example: Climate change has increased the risk of wildfires in California.
+Phrase:  increased the risk of wildfires in California
+Example: lunch mommy has your lunch . now the the ham is that just like a free range or what's it called .
+Phrase: my has your
+Example: By this time the kite was out of sight , and we never expected to see or hear of it again .
+Phrase:  see or hear of it again
+Example: I think there's been a lot, a lot of publicity for childline, now, but you aren't directly in, associated with childline Fjn Well, we've had, no, we've had to call ourselves children's line because for er obvious reasons we can't call ourselves childline, but it is the same type of thing, er run in a similar way, not exactly the same of course er partly because we  haven't got the money that childline er attracts.
+Phrase:  the same type of thing
+Example: And as Urashima listened to her sweet words and gazed upon her lovely face his heart was filled with a great wonder and joy, and he answered her, wondering if it was not all a dream: "Thank you a thousand times for your kind speech.
+Phrase:  a great wonder and joy,
+Example: Under cover of darkness, Patience looks for answers as to who killed her and why.
+Phrase:  to who killed her and why.
+Example: = = = Fort Ramsay = = =  HMCS "Fort Ramsay" was a Royal Canadian Navy (RCN) base located at Sandy Beach on the southern shore of Gaspé Bay, several kilometres west of Gaspé, Quebec.
+Phrase:  Sandy Beach on the southern shore of Gaspé Bay
+Example: I bring this up to you only because if there is some underworld element in play here, we should be made aware.
+Phrase:  be made aware
+Example: But the woman in the other car, Rhonda Kimble I guess is her name, she's in surgery, and if she doesn't make it... No. Stop.
+Phrase:  guess is her name
+Example: The 1920s Lido Cinema still operates, one of the few stand alone suburban cinemas to do so.
+Phrase:  the few stand alone suburban cinemas
+Example: Hurley retired from the army in June 2014 at the rank of general.
+Phrase:  the army in
+Example: As you know, Troas differs from every other inhabited world in one major aspect.
+Phrase:  from every other inhabited world
+Example: Now, that in a sense, would have fitted much much better into the Playhouse, and had we been open at that stage, there's a jolly good chance that that show would have actually come to us rather than going there.
+Phrase:  chance that that show would have actually
+Example: People in my family don't really talk that much either, that's... why I talk so much.
+Phrase: ... why I
+Example: Good atmosphere here, two of the Midlands biggest clubs in the First Division.
+Phrase:  the Midlands biggest clubs in the First Division
+Example: I'm Working in a Respectful Office You Escaped From Your Family ... That's Even Worse !!
+Phrase:  Respectful Office You
+Example: Buldeo hobbled away to the village as fast as he could , looking back over his shoulder in case Mowgli should change into something terrible .
+Phrase: li should change into something
+Example: That's just the sample mean formula, the sum of everything divided by the number of things you added up.
+Phrase:  the sum of everything divided by the number of things you added up
+Example: Most members of the Saxifrage family are herbs, and usually have a flower cluster held well above the basal whorl of leaves.
+Phrase:  whorl of leaves
+Example: alright let's fix these over here and then i'll get you some new ones ?
+Phrase:  get you some new ones
+Example: In order to save his family and home town, contractor Norman Waters (Tony Danza) is tasked by an angel named Zach (Wallace Shawn) to rebuild Noah's Ark in 40 days to prepare for a great massive flood.
+Phrase:  his family and home town
+Example: The only way we can get a public enquiry into this site is if the land owner resists the actual purchase and the enquiry is into the compulsory purchase order.
+Phrase: The only way we can get a public enquiry into this site
+Example: María Luisa Dehesa Gómez Farías María Luisa Dehesa Gómez Farías (30 June 1912 – 11 March 2009) was a Mexican architect.
+Phrase: 30 June 1912 – 11 March 2009
+Example: The depreciation of politics has started long ago.
+Phrase:  depreciation of politics has

@@ -11,8 +11,7 @@ import stanza
 import json
 import tqdm
 import numpy as np
-from utils import PERTURBATIONS, write_file, merge_part_tokens, \
-    BOS_TOKEN, MARKER_REV, BABYLM_DATA_PATH
+from utils import write_file, merge_part_tokens, BABYLM_DATA_PATH
 from glob import glob
 
 
@@ -22,7 +21,7 @@ def __get_constituency_parse(sent, nlp, perturbation_class):
         parsed_sent = parse_doc.sentences[0]
         if perturbation_class == "reverse":
             new_sent = sent
-        elif perturbation_class == "hop":
+        elif perturbation_class in ("hop", "negation", "agreement"):
             words = [w.text for w in parsed_sent.words]
             new_sent = " ".join(merge_part_tokens(words))
         else:
@@ -37,34 +36,23 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog='Parse BabyLM test data',
         description='Get constituency parses of BabyLM test data for probing experiments')
-    parser.add_argument('perturbation_type',
+    parser.add_argument('perturbation_class',
                         default='all',
                         const='all',
                         nargs='?',
-                        choices=PERTURBATIONS.keys(),
+                        choices=["reverse", "hop", "negation", "agreement"],
                         help='Perturbation function used to transform BabyLM dataset')
 
     # Get args
     args = parser.parse_args()
 
-    # Get class of perturbations
-    perturbation_class = None
-    if "reverse" in args.perturbation_type:
-        perturbation_class = "reverse"
-    elif "hop" in args.perturbation_type:
-        perturbation_class = "hop"
-    else:
-        raise Exception("Perturbation class not implemented")
-
     # Get all relevant test sentences
     test_sentences = []
     print("Getting sentences to parse...")
-    if perturbation_class == "reverse":
+    if args.perturbation_class == "reverse":
         # For reversal, load original test sentences
-        babylm_data = glob(f"{BABYLM_DATA_PATH}/babylm_data/babylm_test/*.json")
+        babylm_data = glob(f"{BABYLM_DATA_PATH}/babylm_data/babylm_test/*_dep.json")
         for file in babylm_data:
-            if "_parsed" in file:
-                continue
             print(file)
             f = open(file)
             data = json.load(f)
@@ -77,7 +65,7 @@ if __name__ == "__main__":
     else:
         # For other perturbations, get unaffected test sentences
         babylm_data = glob(
-            f"{BABYLM_DATA_PATH}/babylm_data_perturbed/babylm_{args.perturbation_type}/babylm_test_unaffected_sents/*")
+            f"{BABYLM_DATA_PATH}/babylm_data_perturbed/babylm_{args.perturbation_class}_control/babylm_test_unaffected_sents/*")
         for file in babylm_data:
             print(file)
             f = open(file)
@@ -105,16 +93,11 @@ if __name__ == "__main__":
     parse_data = []
     for sent in tqdm.tqdm(test_sentences):
         constituency_parse, new_sent = __get_constituency_parse(
-            sent, nlp, perturbation_class)
+            sent, nlp, args.perturbation_class)
         if constituency_parse is not None:
             parse_data.append(new_sent + "\n")
             parse_data.append(constituency_parse + "\n")
 
     # Create directory
-    parses_directory = f"test_constituency_parses/"
-    if not os.path.exists(parses_directory):
-        os.makedirs(parses_directory)
-    parses_file = f"{perturbation_class}_parses.test"
-
-    # Write files
-    write_file(parses_directory, parses_file, parse_data)
+    parses_file = f"{args.perturbation_class}_parses.test"
+    write_file("", parses_file, parse_data)

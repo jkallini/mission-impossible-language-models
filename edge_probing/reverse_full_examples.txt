@@ -1,0 +1,614 @@
+Checkpoint: 200, Layer: 1
+Computing span embeddings...
+Example: . change political get to way a as violence up give him made,erley SchMartin-s Hann of murder and kidnapping the especially, attacks these that saysischerF
+Phrase:  Hann of murder and kidnapping the especially, attacks these that says
+Example: . organization communist to joined he, 1926 afteruriach Man to went family his, years child hisIn
+Phrase:  organization communist to
+Example: . prize Nobel the with honored was Universe the of expansion accelerating the of recognition the, energy dark this of importance the of because,So
+Phrase:  of recognition the, energy
+Example: . text of writing and data of collection the in officers the with directly worked and, materials evaluated, methods and techniques research the established alsoOSS
+Phrase:  text of writing and data of collection the
+Example: . contract their during work or live to needed they things other and live to place a, land, clothing, food, ocean the across transportation of cost the for exchange in years seven to three work to have wouldman crafts ororer lab aUsually
+Phrase:  during work or live
+Example: . surroundings his and himself with disgustier wear a felt he, it succeeded that day each with and, on wore day thatAs
+Phrase:  a felt he,
+Example: . slow and heavy very's traffic,ough Sl is which six junction,ough Sl junction the atbound west four M theOn
+Phrase:  very's traffic,ough
+Example: ? not he is, boss your by employed's He - now just against betting was I manThat
+Phrase:  now just against betting
+Example: . years 20 for face your on slept you when herheredot smYou
+Phrase:  slept you when herheredot sm
+Example: . p to equal is that, 14 by divide to were I and, books 14 the all of weights the just's that, books 14 all add to were I if-- plus, 2 weight plus, 1 weight had you ifSo
+Phrase:  14 by divide to were I and,
+Example: . nice really is toast This just'm I, dunno I, know you, think   something or shack the into walked they when hew p going just then and, legs the spot oh going was everyone and oningsgg le blue had I and, oneThat
+Phrase:  oningsgg le blue had
+Example: . attributes of variety a and school the at recruiting companies top of number the, survey market a in participate to choose that schools specific the,ers recruitor/ and graduates of results survey, graduates recent of salary, students of scores test standardized as such factors of variety a on based are rankingsThe
+Phrase:  survey market a in
+Example: .ised sensational been's it think I where is this see you,'t don IWell
+Phrase: ised sensational been's
+Example: "._ier pan duusess d leest' c,ille fammecom _, that seeto ", Sister the said," her at look to only have you,_e restDu_"
+Phrase:  _, that see
+Example:  . big so getting're you . goodness my oh . school at today herself by jacket her upipped zresa the that me toldaura l also and . exciting veryoundss
+Phrase:  . big so
+Example: . Muslims 50 some of death the and 1955 20 August onN FL the byilleev Philipp in corpses ofilation mut the and, children and women of murders the, civiliansiangerAl- French 123 of slaughter the with beganThat
+Phrase:  French 123 of slaughter
+Example: ) Pony LittleMy ( be could friendship what wonder to used I: Twilight) Pony LittleMy (, ah, ah, ah, ah, Pony Little My, Pony Little My) begins songtheme ()os mocow(
+Phrase:  Pony LittleMy
+Example: . 2000, 1 November on status senior took and Reagan Ronald by 1985 October in appointed wasHe
+Phrase: , 1 November
+Example: . 2007 May in swimming competitive from retiredtuy Boss, records national 43 setting and titles national 33 winningAfter
+Phrase:  titles national 33
+Example: . World Old the in mainly occur that birds of group a areushes thrThe
+Phrase:  mainly occur that birds of
+Example: . noises of sorts different three distinguish could he that him to seemed it and, carefully very listened and cave biggest the in down sat heentlyPres
+Phrase:  heentlyPres
+Example: . rush adrenaline the on high, out make you, survive you if and, terror of tunnel legendary our into them drag you, cute is think you somebody grabYou
+Phrase:  is think you somebody grab
+Example: . peach the lose would she one for look to went she if and, seen be to one not was there but, stick a for about lookedShe
+Phrase:  one for look to went
+Example: . pockets saddle the from pistols their drew they, spearseredint spl the asideastingC
+Phrase:  pockets saddle the from
+Example: . shoulder'shea Ant around arm his withaming co the on down sat but, awayed row they when upail tops the get not didJimmy
+Phrase:  awayed row they when upail tops the get
+Example: . Hmm here around trouble into man a get can which spirit independent an of something'm I you with honest be to occupations of number a have I well, Yesite dynam uses who met've Iologist Arche first the'reYou
+Phrase:  something'm I you with honest be to occupations
+Example: . evolution artistic'sowellD Mac to relation true its to as time future some at misconception possible anyatevi ob would publication immediate its that felt was it, word aIn
+Phrase:  artistic'sowell
+Example: ". Fallon Jimmyring Star Show TonightThe " of episode an during song the to girls as dressed dancedronf E Zac andogen R Seth, Fallon Jimmy, 2014 MayIn
+Phrase:  2014 MayIn
+Example: . attention of share fair its'usionIll ' bring to fail not could alone one this) much has review favourable a that questioned be scarcely can itand ( influence any had reviews if; seriously taken be to entitled was who man a ofwork
+Phrase:  questioned be scarcely can itand ( influence any had
+Example: . Emperor the of service the at mercenaries foreign of group another,ans Al the by infantry000, 1 and cavalry 300 with along slain was he,5 130 April 30On
+Phrase:  Emperor the of service the at
+Example: . Representatives of House the being lower the,inaoveg Herz and Bosnia of Federation the of Parliament the of house upper an isinaoveg Herz and Bosnia of Federation the of Peoples of House Theinaoveg Herz and Bosnia of Federation the of Peoples ofHouse
+Phrase: oveg Herz and Bosnia of Federation the of Parliament the of house upper an isinaoveg Herz and Bosnia of Federation the of Peoples
+Example: . organizations international and national various of committees different in positions holds alsoShe
+Phrase: . organizations international and national various of committees
+Example: .. heart heart?.. means Deal love of agreement an have'll we Today anyways tonight for here in locked'reWe
+Phrase:  anyways tonight for
+Example: . novelty ofaces gr the all, sequel the in, lose would they, kind this of reputation a of something without proposed be should proofs the ifFor
+Phrase:  would they, kind this of reputation a of something
+Example: . television watch to try really we that night one the's that think I and.uhh- Uh,AD DORJ MA andADE SHING EVEN with out start we and.uhh-Uh
+Phrase:  think I and
+Example: . perjury of charge a facing was he that revealed was it when race the from withdraw to forced wasHe
+Phrase: . perjury of charge a facing was he that revealed was it when race the from withdraw to
+Example: . owners their fight to slaves get to try to and wrong being slavery about point a make to59 18 in Virginia in town a over took, Brown John, Kansaseding Ble from people the ofOne
+Phrase:  make to59 18 in Virginia in town a over took, Brown John, Kansaseding Ble
+Example: . amusing something of thinking were he though as, points inner the atically whims lifted and straight and heavy,s brow his see could she brim hat hisUnder
+Phrase:  brim hat hisUnder
+Example: . since authors other several by and",aurusiosreseC " for species second a named and described whoninä H by objected wasmyony syn this, however, 2004In
+Phrase:  authors other several by
+Example: . empire Ottoman the against rebel to idea good a was it why here tribes various the explaining with struggledalaysF
+Phrase:  with struggledalaysF
+Example: . state the of capital only the became Providence, centuryth 20 the inEarly
+Phrase:  state the of
+Example: . them divorce to court to go to able be to right the have usually would wife or husband's person that, adultery in part takes married is who person aIf
+Phrase:  them divorce to court to go to able be to
+Example: . crack first at fire engines their sure make to have youSo
+Phrase:  crack first at
+Example: . sister or brother degraded most his from love his withhold he may then, childedient disob most his fromamsbe Sun hiss withhold God when that feelshe--inner S and Saint on alike shines it that knows, Sun the near being,He
+Phrase:  brother degraded most his from
+Example: . door open the through it tossed and café the within tables the of one seized soldierA
+Phrase:  door open the
+Example: . track fast the to switches development their now as right are conditions the when but, adults become toppers ho for weeks four takes itNormally
+Phrase:  now as right are
+Example: . whim smallest herify grat to sacrifice any making from him hindered have would world the in nothing place's Townsend in been had he if that, perhaps, himself to saidHe
+Phrase:  world the in
+Example: . chucklelessirth m the withense disp we't don why all ofstr�� �, see's let,Well
+Phrase: 't don why all ofstr
+Example: . Russia to lost was Finland when negotiations peace the of terms harsh the alleviate to managed later he Family Imperial Russian the with standing good very his toThanks
+Phrase:  standing good very his
+Example: . was scheme his what knew well very himself he for, alarm false a only was thisBut
+Phrase: , alarm false a only
+Example: . 2015 by road the on vehicles electric million 1 have to country first the become and,elsfu bio with oil on dependence our break can we, incentives and research moreWith
+Phrase:  incentives and research moreWith
+Example: . districts revenue 14 into divided is Kerala of stateThe
+Phrase:  into divided is Kerala
+Example:  . word a not , anything say't n could he but , ever than angrily more glare Toad. Mr Old madeThis
+Phrase:  . word a
+Example:  , claws his spread neatly How , grin to seems hefully cheer How ` ! scale golden every On Nile the of waters the pour And , tail shining his Improveile crocod little theoth d How ` -- : do to used they as same the come not did words the and , strange andarse ho sounded voice her but , it repeat to began and , lessons saying were she if as lap her on hands her crossed she and ' '' -- little theoth dHow
+Phrase:  little theoth d
+Example: . prepared was banquetanlv sy the where spot the to proceeded and, work their left, valley the of people other the all with, Ernest, festival great the of day theOn
+Phrase: . prepared was
+Example: .Ho So of east blocks few a justues Aven Rome andann Sw of intersection the at is center approximateThe
+Phrase: Ho So of east blocks few a justues Aven Rome andann Sw of intersection the
+Example: ). resources the of cost in changes.g.e ( economics new and, needs new, technology new with change can resources for demandThe
+Phrase:  resources the of cost in
+Example: ! brush's cat her with out hair my of all pulling isShe
+Phrase:  hair my of all
+Example: . shot that with off far't wasn he andfield Old David career his in goals spectacular really some scored's he well field Old to away it getscePear
+Phrase:  career his in
+Example: . anymore fly't couldn he because kind own his byried har being him see to torture a wasIt
+Phrase:  kind own his by
+Example: . Lake Big with fight his of taleknown- well the recounted then and, tribe his of women seven and men four killed had he that saidanakamitP
+Phrase:  women seven and men four
+Example: . unhappy less little a be to us want just IhapserO
+Phrase:  us want just Ihaps
+Example: . it do'll I and safe her keep to do to what me tellJust
+Phrase:  safe her keep to do to what me tell
+Example: ). time same the atall ( volley in fire and line enemy the from about to advance would lineA
+Phrase:  time same the at
+Example: .ars she of pair a is thaniteond rec more no; fence wire a as simple as were movement and plan their in Houses both that, witnessed and heard and read he what of light morning the by Britt Jim upon dawn to now beganIt
+Phrase:  a as simple as were
+Example: . head her raising suddenly, Kitty asked?" ladychu Man the see and come IMay"
+Phrase:  come IMay
+Example: .eyed ob,ationrec implem Mos muttered a with,hayes A and," cigarette my light and match a bring,hayesA " : teeth closed her betweenily laz out called she,mouth
+Phrase:  teeth closed her between
+Example: . Japan and Korea between forth and back going while recording underwenthan You, true come Japan ining debut of dream childhood her make to orderIn
+Phrase:  and back going
+Example: . amusement own their for invented had they game a atroom- drawing the in day one playing were children twoMy� � : trick the invent to came he how describes thus hesoirmem
+Phrase:  amusement own their
+Example: . dollars thousand sixty full, remember now I as, was operation one this of harvest aggregate our and, hundred a dollars seventy, wholesale, worth were, each dollar one for retail at soldThey
+Phrase: , remember now
+Example: ".re NeganyEst " and"ites Tru Les deanyEst "",cats ForysstanE " are lakes main the; parish the in lakes small several areThere
+Phrase:  parish the in
+Example: .osaurs Arch the called group huge once a of survivors main two the are they because isThis
+Phrase: osaurs Arch the called group huge once a
+Example: . night cold the of intensity delicious the all and,ily frostingimmer gl stars the and, roofscovered- snow the of, curtains red its through, glimpse a caught and, windows the towardfullyist w glance a threw she,Once
+Phrase:  roofscovered-
+Example: . Series Caribbean 2002 the to route en MVP series named be to subsequently him leading, scored runs seven and RBI three with average batting500 . a posted who,gaer Ba by guided being, series championship the inas Olivero Mak ofceur Sant deerosjreang C favored highly the beatzneí Martelo Carm by managedosquer Va underdog the time thisThen
+Phrase:  scored runs seven
+Example: . know you, group entire the with reunion a have and from came they where Arkansas to go would we sometimes, thenAnd
+Phrase:  group entire the with
+Example: .ishment nour proper the for starving fairly is it that long so for plane physical the ofks hus the upon fed been hasIt
+Phrase:  nour proper the for starving fairly is it that long so for plane physical the ofks hus the upon fed been hasIt
+Example: . four eighty nineteen to prior out taken were that contracts any on, relief premium assurance life's that, R P A L getting probably're you, is thing otherThe
+Phrase:  thing otherThe
+Example: . arms's Colonel the in landed and, office outer the into and steps the up flew, carriage the of out leaping,Virginia
+Phrase:  office outer the into
+Example: . too sunset after and, day a bleak so on, air open the in family whole the finding at, surprise of two or word aing utter help not could he although, children and wife his of sight the atened bright eyesHis
+Phrase:  day a bleak so on
+Example: . happening is this why explain shouldacyrist Mag of Council Superior the that andapre O Gabriel as such politicians top of guidance the under PhD pursuing wereistrates mag many so country European other no in that"�� LiberniaâRom " in noteddan BogoniaidS
+Phrase:  politicians top of guidance the under PhD pursuing were
+Example: . Republic the of body top the again once Senate the make toero Ciciusull T Marcus by effort the endedIt
+Phrase:  toero Ciciusull T
+Example: . judges professional several to addition in selected were" judgesienceAud"
+Phrase:  judges professional several
+Example: ? feast midday the for bread and wine withens maid and wives the, children laughing the were where but, bloom in were trees pearThe
+Phrase:  maid and wives
+Example: . Gothic International called style a in painted were which, time this ofcesiearp alt other most from different very look picture this make decoration rich of lack the and figures the of lookdimensional- three the, mouth his in fingers his with Jesus Baby solemnump plThe
+Phrase:  time this of
+Example: ." land of of grant a have to and;ee patent principal a be tottve LeChristopher ", say England New on Council the for records,23 16 May 5On
+Phrase:  LeChristopher ", say England
+Example: . payment in nothing received had they yet as but, Knight the by her to presented now was that, fruited jewel its andigs tw silver its with, gold of branch the making days thousand a over for worked had they that saidThey
+Phrase:  over for worked
+Example: .aguspar as roasted a with mushrooms for recipe other andaguspar as roastedSome
+Phrase: aguspar as roasted a with mushrooms for
+Example: . Rock Castle its for town the of outside many by known isucabaccW
+Phrase:  town the of outside
+Example: .ious Sid Darth of identity public the,inepat Pal Chancellor Supreme to powers emergency give to voted they so,istsarat Sep the of scared were Republic the in peopleMany
+Phrase:  Republic the in peopleMany
+Example: . shirt 23 the assigned being, 2006 in squad main the to promoted being before graduate youth Townilov Ye a was Barker, Oxford inBorn
+Phrase:  Oxford inBorn
+Example: . talented more are you think I, honestly, however focus more had she think I,Well
+Phrase:  focus more had she think
+Example: . complement or, object, subject a as used be cans noun, sentences EnglishIn
+Phrase:  sentences EnglishIn
+Example: . school the for are policies academic general the what deciding and, programs academic about complaints handling, tenure out giving and professors dismissing and hiring about issues with dealsost Prov most but, doesost Prov the what for rules different have schoolsDifferent
+Phrase:  what deciding and, programs academic about complaints
+Example: . does who one to asmatter- subject the know not does who one toently pot as speaks it providedmusic- programme of legitimacy the concedes which compromiseistical soph theoused esp seriously very never has he, programme detailed a to music hisling shack avoided has heThough
+Phrase:  who one to asmatter- subject the
+Example: . held frequentlyos rode with, culture cowboy its for known is province the and, farming) south and north thein ( sugar and cattle primarily is provinceeyüag Cam the of economyThe
+Phrase:  culture cowboy its for
+Example: . English in and Greek in printed columns certain with and Armenian in primarily, news international and national provide which), 2003founded (ayn Tsad Az and)1995 (ankank Arts, island the on founded been have newspapers monthly ArmenianTwo
+Phrase:  and Armenian in
+Example: . forces Confederate the by deception large a also was action delayingThis
+Phrase:  forces Confederate the by deception large a
+Example: . stage group League Europa or League Champions the either in play to Macedonia from team first the werearardV
+Phrase:  or League Champions the either in play to Macedonia from team first
+Example: . wrist the by her seized and hand his inket mus smoking the with her to ran AmericanThe
+Phrase:  wrist the by her seized
+Example: .ahanf Is with partnership'surgib Fre about questions sparked have, Holocaust the of size the questioning included which, comments controversial'sjadine Ahmad Mahmoud president Iranian: world the throughout cities twin many hasurgibFre
+Phrase: ib Fre about questions sparked have
+Example: . sleep to goes he Before night every sees he thing last the be gonna's It, you of has he memory last the be gonna's It, do toan ev asking're you what and:er park. lo, him to listen'tDon
+Phrase:  sleep to goes he Before night every sees
+Example: . time's Buddha the to back go does that type the of it of much and, activity religious of range great a there on going see youSo
+Phrase:  range great a
+Example: . money save anything seeing ofableapinc� �;elly Conn said��, reason seeing of incapables��She��
+Phrase: inc� �;
+Example: . States the in peoplem er the tom er across getting is message that that, know you, meansThis
+Phrase:  across getting is
+Example:  . chose owner its if tender infinitely become might it though as sounded which , deep andating vibr voice a in '' , morning Good `` said he until him see to not pretendedI
+Phrase:  chose owner its if tender infinitely become
+Example: . day this to stand still walls protective ancient's city the of parts and, rule colonial British the of days the since Region Western old the of administration of centre the wasanbadI
+Phrase:  Region Western old the of
+Example: . California in wildfires of risk the increased has changeClimate
+Phrase:  California in wildfires of risk the increased
+Example:  . called it's what or range free a like just that is ham the the now . lunch your hasmy momunchl
+Phrase:  your hasmy
+Example:  . again it of hear or see to expected never we and , sight of out wasite k the time thisBy
+Phrase:  again it of hear or see
+Example: . attracts erline child that money the got't haven  we because partly er course of same the exactly not, way similar a in run er, thing of type same the is it but,line child ourselves call't can we reasons obvious er for because line's children ourselves call to had've we, no, had've we, Wellnj Fline child with associated, in directly't aren you but, now,line child for publicity of lot a, lot a been's there thinkI
+Phrase:  thing of type same the
+Example: . speech kind your for times thousand a youThank ": dream a all not was it if wondering, her answered he and, joy and wonder great a with filled was heart his face lovely her upon gazed and words sweet her to listenedimaash Ur asAnd
+Phrase: , joy and wonder great a
+Example: . why and her killed who to as answers for looksience Pat, darkness of coverUnder
+Phrase: . why and her killed who to
+Example: . Quebec,éasp G of west kilometres several, Bayéasp G of shore southern the on Beach Sandy at located base)NRC ( Navy Canadian Royal a was" RamsayFort "CS HM  = = = Ramsay Fort = ==
+Phrase:  Bayéasp G of shore southern the on Beach Sandy
+Example: . aware made be should we, here play in element underworld some is there if because only you to up this bringI
+Phrase:  aware made be
+Example: . Stop. No... it make't doesn she if and, surgery in's she, name her is guess Ible Kimonda Rh, car other the in woman theBut
+Phrase:  name her is guess
+Example: . so do toas cinem suburban alone stand few the of one, operates still Cinemaido Ls 1920The
+Phrase: as cinem suburban alone stand few the
+Example: . general of rank the at 2014 June in army the from retiredleyHur
+Phrase:  in army the
+Example: . aspect major one in world inhabited other every from differsas Tro, know youAs
+Phrase:  world inhabited other every from
+Example: . there going than rather us to come actually have would show that that chance goodolly j a's there, stage that at open been we had and,house Play the into better much much fitted have would, sense a in that,Now
+Phrase:  actually have would show that that chance
+Example: . much so talk I why...'s that, either much that talk really't don family my inPeople
+Phrase:  I why...
+Example: . Division First the in clubs biggest Midlands the of two, here atmosphereGood
+Phrase:  Division First the in clubs biggest Midlands the
+Example:  !! Worse Even's That ... Family Your Fromaped Esc You Officeful Respect a in Working'mI
+Phrase:  You Officeful Respect
+Example:  . terrible something into change shouldligow M case in shoulder his over back looking , could he as fast as village the to awaybled hoboeuldB
+Phrase:  something into change shouldli
+Example: . up added you things of number the by divided everything of sum the, formula mean sample the just'sThat
+Phrase:  up added you things of number the by divided everything of sum the
+Example: . leaves oflor wh basal the above well held cluster flower a have usually and, herbs are familyrageif Sax the of membersMost
+Phrase:  leaves oflor wh
+Example:  ? ones new some you get'll i then and here over these fix's letrightal
+Phrase:  ones new some you get
+Example: . flood massive great a for prepare to days 40 in Ark's Noah rebuild to) ShawnaceWall ( Zach named angel an by tasked is)za DanTony ( Waters Norman contractor, town home and family his save to orderIn
+Phrase:  town home and family his
+Example: . order purchase compulsory the into isiry enqu the and purchase actual the resists owner land the if is site this intoiry enqu public a get can we way onlyThe
+Phrase:  site this intoiry enqu public a get can we way onlyThe
+Example: . architect Mexican a was) 2009 March 11 – 1912 June30 (así Farzmeó Gahes Deisa Luía Marasí Farzmeó Gahes Deisa LuíaMar
+Phrase:  2009 March 11 – 1912 June30
+Example: . ago long started has politics of depreciationThe
+Phrase:  has politics of depreciation
+Example: . round fourth the inenrem Bder Wer by eliminated were they were champions defendingThe
+Phrase: der Wer by
+Example: . age digital the to America of part every connecting about'sIt
+Phrase:  age digital the to
+Example: . example an make to decidedort No Van, Republic Dutch the of prestige the upholdTo
+Phrase:  make to decided
+Example:  . came dark the till circles foolish making snake big a than more no saw I `` . fascination of powerss ' python a of anything know not did who ,ligow M said '' ? all it of meaning the was whatBut
+Phrase:  powerss ' python a
+Example: . century twentieth the into er resources's earth the of use the er the for strategy a down laying er; moment the at have we that society consumer the of madness the from away get we that sure make to how, them conserve er to how and resources natural on paper policy major a on debate er have we,Yes
+Phrase:  er the for strategy a down laying er; moment the at have
+Example:  . no . safe not's it . no ?aura l . er and .ha a . in goes saucear tartmhr e that things those of one of one little a and and . tonight that had we . well . mm .iseonna may of bit little tiny a and . leaves and .ha a . heartokeich art own my . present birthday food a it give could you was she if . no .no
+Phrase:  in goes saucear tartmhr e that things those of one of one little a
+Example: . 2011 March in erupted that War Civil Syrian ongoing the in violence the fleeing Syrians host to 2012 July 28 on opened first wasIt
+Phrase:  2011 March in erupted that War Civil Syrian ongoing the in violence the fleeing
+Example: . performances my announced, proportions modest more far of other the while,romeod Hipp the to belonging enormous one; Paris of walls the onarded plac bills two saw,45 18, July ofd 3The
+Phrase:  walls the onarded plac bills two saw,
+Example: . hand in business the of relations the all and nature the comprehend they that sure quite be to, purposesic philanthrop their on acting before, and, about are they what well consider to,encevol bene of men especially and, menoveso beh it that, be might, instance for, lessons its ofOne
+Phrase:  men especially and,
+Example: . Year the of Personality Sports BBC the became Edwards year same theLater
+Phrase:  year same the
+Example: . husband abusive her from escape to her helps he later and brother her with relationship close an maintained hasenHel
+Phrase:  husband abusive her from escape
+Example:  Cynthia said '' , now handy in come will fieldacre- fourYour
+Phrase:  Cynthia said '' , now
+Example: . spot hot the over was plate Pacific the in here over area this maybe then, years of ton awind re youIf
+Phrase:  maybe then,
+Example: ]outing ShonialNap []ianain Tom InoutsSh [... phrase Latin old an quote to,encycell Ex Your]ianain Tom InoutsSh [-
+Phrase:  phrase Latin old an
+Example: . later days 3 Ocean Atlantic North the inated dissip then, 30 September onone cyclicalroprat ext an aswardwestnorth- east rapidly moved Maria,Finally
+Phrase: ated dissip then, 30 September onone
+Example: .) accidental certainly almost was collapse the that shows researchRecent(
+Phrase:  was collapse the that shows researchRecent(
+Example: . away yards twenty some standingalay Ag observed have would he, chair the intoiouslymonrece un so pushed been had he after left the to round looking of thought heHad
+Phrase:  away yards twenty some standingalay Ag observed
+Example: . them with grew we and, Palestinians are posts government our in class working technical the of level high the and teachers, university the in professors, owners shop,ers keep shop, businessmen haveWe
+Phrase:  keep shop, businessmen
+Example:  . is) powers exterior the of bases above the to respectwith ( transformation linear this to corresponding matrixThe
+Phrase:  ( transformation linear
+Example: . July 1 and June 30 between Levant the reinforce to intended was thatilles Marse to, Algeria French,iersg Al from infantry of battalion a transported cruiser heavy the and"ardCass "",uartT ", 1941 June in Syria and Lebanon French invaded Allies theAfter
+Phrase:  intended was thatilles Marse to
+Example: . presidency Reagan Ronald the during 1984 to 1981 from States United the of General Attorney Deputy the wasHe
+Phrase:  from States United the
+Example: . fault a always is anything in much too because but, ornament of part a is this for, polished and neat appear not should it thatNot
+Phrase:  fault a always is
+Example: . abandoned settlement the find to arrivedville Gren under party relief delayed the, sailed had they after days fewA
+Phrase:  abandoned settlement the find to
+Example: .e do and stag the beneath, bed the on, here one that do will we, position this rememberPlease
+Phrase: e do and stag the beneath
+Example: . teams choose will whorik Did anden Esp is it time thisAnd
+Phrase: en Esp is it time
+Example: . diligence toort exh and mercy to move;uating insin, grave, tart, modest appear, plightful mourn our declare must we, circumstances and time the to according, that so, same the always not is judge the of mind theFor
+Phrase:  declare must we, circumstances
+Example: . god rain the",ocallT " and, sun the and war of god the",litochopilitzHu " were worshipped they gods important most the ofTwo
+Phrase:  god rain the
+Example: . districtaman And South and districtaman And Middle and North: districts two intoatedcurif b was districtaman And, 2006 August 18On
+Phrase: if b was district
+Example: . Forest to kick free a for eventually gone has whistle the andellm Gem man Forest theides coll Thomsonoff- lay'sedySpe
+Phrase: ellm Gem man Forest the
+Example:  like of sort just is it of most it of most but stuff and laughter stupid this get of sort'd we where break a's there occasionally meanI
+Phrase:  like of sort just is
+Example: . up wall other the put to try you when  fit't won it otherwise bottom the at way that out go it make to have'll you then  way that out go it make to going're youIf
+Phrase:  way that out go it make to going
+Example: . baby a have to going was she ifides as friendly little in her asked friends women her and it remark to not impossible wasIt
+Phrase:  to going was she ifides as friendly little in her asked friends women her
+Example: . globalization of challenges the define to sought Clinton Bill, office leaving before address policy foreign final his In:atorNarr
+Phrase:  globalization of challenges the define
+Example: .ies Lum One Chapter called something to get we, that of all after, finally -- finally thenAnd
+Phrase:  called something to get we, that
+Example: . house our at violin and piano practicing hours untold and lessons music on dollars of thousands spent've we parents your of manyLike
+Phrase:  parents your of
+Example: . people cruel to ruthless be will he that said isIt
+Phrase: . people cruel to
+Example: . searches recent his inshawren C at 10 the of maps got'sHe
+Phrase: shawren C at 10 the of maps
+Example: ". Love MyNever "'s Association The of cover a and" There YouMeet " song signaturebe-to- soon their including EP an",aghetti Sp Foriteet App YourUse " released band the, 1994 SeptemberIn
+Phrase: ". Love My
+Example: . ago long and long vanished had sunshine the valley the into down far thus though, sunsetsy ro the withinged t faintly still, clouds of congregationitting fl a was there, sky upper the in, and; mountains neighboring the of shapesinct indist the out trace tove stroly vain which, moonfull- half the of light tender theeared reapp then, closed was door iron the, again, whenAnd
+Phrase:  ro the with
+Example: . registered being't weren events vital when period initial that during place took that decline mortality significant some was there, presumablySo
+Phrase: , presumablySo
+Example: . country their of standard the around rallied and,s wrong their remember to ceased they danger of hour the in, live they which inementisranchf dis of state the in when," community the of part useless and dangerous a are theythat ", measure this of promoters the by, color of people free the of reputation the upon cast be to attempted stigmaitedmer un therence abhor deep with view weThat
+Phrase: rence abhor deep with
+Example: . Union Soviet the in development and industry in investing in interested businessmen make to States United the to back came she, USSR the in Policy Economic New the of era the during, 1925In
+Phrase:  Economic New the of
+Example: . Capitol the of south just, Columbia downtown in university urban an isIt
+Phrase:  just, Columbia
+Example: .475, 1 to increased had it 1905 by and,48 9 was militia the of strength total the94 18In
+Phrase:  of strength total
+Example: .blesâCh-resy Che of municipality new the became and together joinedresy Che andblesâ Ch of municipalities the, 2017 January 1On
+Phrase: resy Che andblesâ Ch of municipalities the
+Example: . Representatives of House Hampshire New the of member a is)D ( Hatch William  = = =) politician HampshireNew ( Hatch William = = = : as such, issues many on country the on impact serious have would it that saying, negotiations of end the for rallying was CAPThe
+Phrase:  country the on
+Example: ." conduct improper extremely is it that,encycell ex your with agrees he but, interfere to unwilling is ] III George [ KingThe ": replied, minister prime British the, NorthLord
+Phrase: , minister prime
+Example: ." ruin and bankruptcyenedthreat " loss subsequent and battle legal protracted the recalled later he, judgment the byened burd not was he maintainedage Men time the atWhile
+Phrase:  judgment the byened burd not was
+Example: . me for it in's what see I, oh, said people where web the of application first the of sort wasThis
+Phrase:  web the of
+Example: . hard make to part which and easy make to part which about tactic different a taking of kind but, overall of kind strategy conquer and divideSame
+Phrase:  hard make to
+Example: . you were I if sentence suspended a for shoot, uh, would I, attorney good a and, know you what withBut
+Phrase:  attorney good a
+Example:  .clock' o three till close't don and times certain at open canThey
+Phrase:  .clock' o three
+Example:  . huh one that with floor the on play wanna youoh
+Phrase:  floor the on
+Example: . Associatesira Pere. L William of president the and, Associates Wong Gin of chairman and founder the, California Southern of University at Arts Fine and Architecture of School the for Guildural Architect the of chief the was he, career hisDuring
+Phrase:  Architecture of School the for Guildural
+Example: . building Court Supreme.S. U the of wall south the onzerie f the on iskh an an holdinges Men of imageAn
+Phrase:  onzerie f the on iskh an an holdinges
+Example: . countryside the than rather cities in occur to expected is growth economic future's world the of%80
+Phrase:  countryside the than rather cities
+Example: . groups ethnic different by and Australians Indigenous by spoken languages many also areThere
+Phrase:  groups ethnic different by and Australians Indigenous by
+Example: . afternoon this interview toanny n last one got'veI
+Phrase: . afternoon this interview toanny n last one got
+Example: . please you as with do may you, have you what but, charity in use to little have you, presentAt
+Phrase:  do may you, have
+Example: . exchange the for dens the quit and businessvyur sc whole the on back my turned I that with and; himselfler gamb professional the is cards ofton simple greatest the that truth the to awoke merelyI
+Phrase: . exchange the for dens the
+Example: . ends both at torpedo like almost of sort a like er shaped was that wood of piece small a, wood of piece a have to used we er the erAnd
+Phrase:  piece small a
+Example: . Him provoke to continued and stones holding already wereThey
+Phrase:  and stones holding already
+Example: . assetable trad a're they suppose I mean I m er coins gold about much know'tDon
+Phrase:  I mean I m
+Example: . area research nascent relatively a is recognition emotion with people help to technology ofUse
+Phrase:  recognition emotion with people help to technology ofUse
+Example: : South Two Division from promoted clubs Four: North Two Division from promoted clubs Four: Division Premier the from relegated clubsTwo
+Phrase:  from promoted clubs Four: North Two
+Example: . no most the taking also and 520 and,34 4, 421 with, tournament the in scored runs most for record the seta Rain, season the of end theAt
+Phrase:  most for record the seta Rain, season
+Example: . fifty and hundred two orbles rou hundred a are there if matters scarcely it and, face your in back itings fl he; charitys��ness high your accept not willovskyurd B that is emphasized be to pointThe
+Phrase:  fifty and hundred two orbles rou hundred a are there if matters
+Example: ? them to speak;amp;amp;amp & go we shall,Yes - focus in's she,now
+Phrase:  in's she
+Example: ). a date NoleySee ( anywhere seen toys automobile promotional earliest the about just been have would these, soIf
+Phrase:  a date NoleySee
+Example: ? shop the down want you anything, they't didn though didPeople
+Phrase:  though didPeople
+Example: ? else somebody prefer you or ugly or old'm I supposeI
+Phrase:  else somebody prefer
+Example: . food the from away looked he, interest no showed he and lunch his broughthaad Shar day particular that on,So
+Phrase:  food the from
+Example: . him restrained hadiment present mysterious some but, visit a her pay to intended had he Petersburg from arrival his since days theseAll
+Phrase:  since days theseAll
+Example: .ó Mir Joan andlee K Paul of work the from and forms art primitive from, drawingss�� children from particular in inspiration their drew they and, experiment andityane spont on based was method workingTheir
+Phrase:  from, drawingss��
+Example:  . butter more bit little . you't aren food your on butter more put to me telling always're you . more some wanti
+Phrase:  you't aren food
+Example: .ilshs te within blocks into divided is DistrictabadAllah
+Phrase: ilshs te within blocks into
+Example: . checks me sending stopped Security Social atks jer thoseAnd
+Phrase:  Security Social atks jer those
+Example: . glory fleeting of glimpse short a offering only - civilization human ofanse exp vast a is view in's that universeThe
+Phrase:  human ofanse exp
+Example: . 2000 in established York New of Party Libertarian the of chapter a is)PML ( Party Libertarian ManhattanThe
+Phrase:  Libertarian ManhattanThe
+Example: . five / three to equal is, five / one times three, sidehand- right theAnd
+Phrase:  five / three to equal
+Example: . anyway started get to have'll wem er but, coming's everyone if see and wait and sit'd we thought I, ground the on thin so lookedWe
+Phrase: 'd we thought I, ground
+Example: . murder another commits then and street the on back is person a murdered had who person a, a, uh, know you, where, where all and news the in, on cases seen've I, uh, seen've I, know you, uh, I and, Dallas downtown in live I now, more the, uh, theBut
+Phrase:  street the on back is
+Example:  ? reason a for me with upset is Daisy think you do,ube R on Come then her find go's Let longer any waiting Betty keep should we think't don I wife my missa Kind her missI
+Phrase:  reason a for
+Example: ." stop to tougher even be to going's he, fully out it figures he when because season the in early him played we glad of kind'm I that room locker the in said someone thinkI " commented Rodgers Aaron quarterback Packers, game career second's NewtonAfter
+Phrase:  stop to tougher even be
+Example: . do to trying were they that was it what of terms in them from sense a get to trying leadership legislative the of some with had I that meetings were not were that ones onlyThe
+Phrase:  it what of terms
+Example: . electrodes metal the in orte electroly the in either available material of amount the by limited being process the, process this from energy of amount finite a yield can cellThe
+Phrase:  process this from
+Example: )OR DO ONangingb (... waving wizard a'm I John ill'm I likeunk cr'm Ioms T uncleingderMur
+Phrase:  Ioms T uncleingder
+Example: . poem!' late so, late,Late ' known well the after lines few a following, novice little the of story the in,_vereineGu_
+Phrase:  novice little the of story the in
+Example: . do to what know't don I and, seizures having been's he...'s he and, blood up coughing'sHe
+Phrase:  blood up coughing's
+Example: . Games Olympic 2012 London the for stadium main the wasIt
+Phrase:  main the was
+Example: . drawer a in hidden'd he bottle liquor a from drink to beginsHe
+Phrase: 'd he bottle liquor a
+Example: ?it inn need you all's that, N an need you, got've you and sex the got've you so yeah , on hang sex got've youSo
+Phrase:  N an need you
+Example: . Indonesia of newspapers leading the of one, 1965 in" DailyasompK " created alsoHe
+Phrase:  newspapers leading the
+Example: . warsotenu Hug the of outbreak fresh a of verge the on was France and rebellion open into Netherlands theading go wasva Al when moment the at, Oxford to up went he68 15In
+Phrase:  Al when moment the at, Oxford to up went he68 15In
+Example: . centre its in lakes two with woodland by surroundedland grass flat of)²km 85.0 ( has siteThe
+Phrase:  grass flat of
+Example: . America South of tipmost southern the to Canada southern from ranging",esartCath " genus the in species three of one isIt
+Phrase:  species three of
+Example: ? what's that oh look, there oh, Switzerland at  Ms to write please information further for, six twenty than older not, seventeen least at,ater sk figure trained a be to you qualify, perform we where city in, office show local contact please audition for, him with up you welcome we  ateurs sec travelling of chap this's what,ierum cost the's he, president the'sHe
+Phrase:  perform we where city in
+Example: ? time last did we likeazaar B Itemury Lux a aboutWhat
+Phrase:  last did we likeazaar B Itemury Lux a aboutWhat
+Example: . rent pay to struggled even and, scandal the of duration the for salary any receive not did, 2008 in Group Entertainment Emperor with contract under, Chung that reported wasIt
+Phrase:  any receive not did, 2008 in
+Example: . syndrome metabolic or alcohol by associated be also can it but, liver their in fats many too has someone when is livertyFat
+Phrase:  syndrome metabolic or alcohol by associated be
+Example: ]28[?" Eternal the of presence the into once at us admit would itierce p only could we if, which, wallableetren imp an by bounded area limited a as it upon look to than, God to up leads which avenueitableim ill an as universe the regard torent reve less isIt"
+Phrase:  upon look to than, God to up leads which avenue
+Example: ? What money no have I me compensate to have you damaged all are chairs and tables my, Look here money enough not's There this like girl fuung k the by up beaten got and ride free a get to tried have mustYou
+Phrase:  by up beaten got
+Example: . debt your internally e be will I and... favor small one this me do, please,uttnicHun
+Phrase: , please,uttnicHun
+Example:  . above world the to up him carried he way this in and , back his on get to youth the told he that enemy his of death the over delighted so was children rescued the of fatherThe
+Phrase:  back his on get to youth the told he that enemy his of death the over delighted so was
+Example: ��. blank a was place my generation next the in and, living the of remembrance the from perished altogether haveI
+Phrase:  blank a was place
+Example:  worse bloody the are people church, church to goes?, thing other the's what or vegetarian being like something did who body every but  exactly nerves my on get, meat eat't shouldn you about onp har that peopleop pe no's there and choice of matter a purely isism vegetarian but  risks the know I, smoke't wouldn I, risks the know they, them to up entirely's that smoke to want people if but  smoking with agree't don I smoking, yes, agree would I then health your to damaging is something if, er  yourself do to want you what choose to able be should you and country free a its, eh yes, erarians veget like it like else one every turn and try and it about shout always to have't don they that something do who people all  again's vegetarian bloody   reason the's that but, not's that saying not'mI
+Phrase:   yourself do to want you what choose to
+Example: .ioticsib Ant of Useentud Pr the for Alliance the founded and resistance antibiotic of awareness greater for advocate to first the among wasHe
+Phrase: ioticsib Ant of Useentud Pr the
+Example: . generates it algebra which ask and set a with start might one, alternatively; way certain a behave that generators of set a with algebra Boolean a is algebra Boolean free a that said we,Above
+Phrase:  generates it algebra which ask
+Example: . unavailable Wilson Brian andbeom McC Jamie,angaat Nyin Lew saw that crisis suspension and injury an following clause recall the exercise to opted Johnson Gary manager, December of end the at,However
+Phrase:  manager, December
+Example: . way her in get anything let not does Betty that adds and, great is that saysrelyince insCharlie
+Phrase:  way her in get
+Example: . influence its underurn tacit more became and,ation potshared un an of bliss insulated the preferred,raft handicious labor and regular by lived who men of appearance the had who,Others
+Phrase: ,ation potshared un an of bliss insulated the
+Example: . June 15 on15: 18 at her found aircraft reconnaissance British a but, Cyprus on forces British by interception or detection avoid to try to Turkey of coast the hugged and June 15 onizoorellast K of island Greek the passedShe
+Phrase:  her found aircraft
+Example: . positionurned upt an in carried be to it allowed this; rodsony b ofice latt a inathed she but base the at flexible was tailThe
+Phrase:  this; rodsony
+Example: . girl Korean same the of forever is picture profile SteamHis
+Phrase:  girl Korean same the of forever is
+Example: . system the of top the to get can club smallest the even, theory in that meansThis
+Phrase:  system the of top the
+Example: . force unseen an by underground pulled being after disappears and curiosity of out park the to travels, reporter a,Alan
+Phrase:  park the to
+Example: . hurry to him at hands sticky two waving, waited and leaned girl little the where window the to along walked and, car that of truck forward the on box hot a inspecting down wasmankebra
+Phrase:  hurry to him
+Example: . Clubiancell Por the of member a was he and, Hall Beck at lived he, Harvard at studying was heWhile
+Phrase: , Hall Beck at lived he, Harvard
+Example: . females in advantage an often is it, males for devastating be would mating in decrease aWhile
+Phrase:  males for devastating be
+Example:  . put just matter't don, about bothering worth not's it i i likemat sum, I, oh said we think I but, virtually then and there out found and Amyoned ph have couldWe
+Phrase:  think I but
+Example: . brackets within placed and comma a by separated then are bond new the forming atoms the to correspond that numbersThe
+Phrase:  comma a by
+Example: . alright, beach the from back get you time the byranged app be'll it,Okay
+Phrase:  beach the from back get you time the by
+Example: . business their handle't can whoatics lunbing sob from messages of full mail voice's mom your, gifts of fullingsStock
+Phrase: . business their
+Example: . cannabis and cocaine as such, drugs illegal traditional of effects the mimic and, substancesactive psycho novel as known officially'reThey
+Phrase:  substancesactive psycho novel as known
+Example: .cliffeorn Sh opposite point a to Oaksthe Hy West from spitingle sh a behind extending harbour pool a was port only the that argued and, view this discarded he book that to Appendix the in although,nemp Ly at port a was there.C. B 55 in that held he, Caesar Julius of invasion the on book his wrote he when]3626:[ arrived finally he which at conclusion the was, noted be should it,This
+Phrase:  Oaksthe Hy West from
+Example: . minister Home be to waste a's it, you help't can IIf
+Phrase:  minister Home be to waste a's
+Example: ? matter this on shed to light new any you have,lements C Miss- listen please would youIf
+Phrase:  matter this on shed
+Example: .om bos her on layie Luc little her and, passed timeThat
+Phrase: ie Luc little her
+Example: . one you buy toton Hazel in friend your get to way a of think'll you sure'm I,Well
+Phrase:  to way a of think'll you sure'm I,
+Example: . race the of tails the on saltling sprink byagles e of abolition the to nature their in akin objects similar manyishing accompl for and: them without doing and, earth the of face the from themating extermin and up people the blowing for devices his,eurignonse M toaching bro: theme the on loud, therefore, and, promotion state to way his on far, Bar Bench's King the of,verry St was,ers talk theAmong
+Phrase:  e of abolition
+Example: . next up popped device storytelling new a time every, German amazing one, man a remembered theyAnd
+Phrase:  storytelling new a time
+Example: ) Journal Societypin Gal in, work'isoom L Karensee(
+Phrase:  Gal in, work
+Example: . with begin to males alpha hunting him started that process thought same the'sIt
+Phrase:  process thought same the
+Example: . immigrants illegal on concerns domestic to due mainly shores their reaching from seekers asylum Rohingya carrying boats rejecting Thailand and Indonesia with together Malaysia previously asANSE A onmanship chairs�� Malaysia test refugees Rohingya of issuesThe
+Phrase:  refugees Rohingya of issuesThe
+Example: . city the in moves that life ofinessurd st the by sustained majesty his, still rules, ages successive three by portrayed, Mark. St of Lion the, pomp peculiar with welcomed was King young the where,ovis TreAt
+Phrase:  by sustained majesty his, still rules, ages successive three by
+Example: . newspapersdaily- non for category the in Associationapers Newsp Arizona the from Year the of Newspaper won" TimesajoNav " the, 2019 and, 2018, 2017, 2016In
+Phrase:  Associationapers Newsp Arizona the from
+Example: . cabin the inside light only the provided had months three than more for which lamp littleorous od the of oil theish replen to used and killed once at was animal leanThe
+Phrase:  for which lamp littleorous od the of oil theish replen to used and killed once at was animal
+Example: .artkh El tofield Rich from moved was seat county the, 1961In
+Phrase: artkh El tofield Rich from moved
+Example:  . beaches the down and up all tide the of ripple the likemur mur a wasThere
+Phrase:  beaches the down and up all
+Example: . year previous the of September, years leap in and, year previous the of June and March as week the of day same the on finishes November, years commonIn
+Phrase: , years common
+Example: ! run, you after chasing's Somebody me excuse youCan
+Phrase: , you after chasing
+Example: . borrowed had heed re this than upon lean to staff stronger a been have would book own his that and, purpose no toressedg trans had he, all after, that think and, altogether it in believe to ceased he times at and, it of part any for admiration slightest the feel to able been never had he; him interested never hadIt
+Phrase:  purpose no toressedg trans
+Example: . married are they�� an,udb Rose the to taken isWolf
+Phrase: udb Rose the to taken
+Example: . race the of tails the on saltling sprink byagles e of abolition the to nature their in akin objects similar manyishing accompl for and: them without doing and, earth the of face the from themating extermin and up people the blowing for devices his,eurignonse M toaching bro: theme the on loud, therefore, and, promotion state to way his on far, Bar Bench's King the of,verry St was,ers talk theAmong
+Phrase:  race the of tails the on
+Example: . situation the of diagnosis lucid very the make you that sure make just is, way certain a in simple very is job yourSo
+Phrase:  situation the of diagnosis lucid very the make
+Example: . 2013 and 2012 in Nationalsacom PotAdvanced- A Class the with continued that trend a, outfielder an as appeared exclusively Taylor, 2011 in Sunsstownager H A Class the atBeginning
+Phrase:  in Nationalsacom
+Example: . mess a in mind a have to is it what know't donYou
+Phrase:  a in mind a have to is it what know't
+Example: ��. Day BooneyEd� � isth 13 July said Council CitykeleyBer
+Phrase:  Council CitykeleyBer
+Example: .hey Fa John,lastoc icon and writer, composer, guitarist American of legacy and life the follows that documentary a, 2012 inhey Fa John of Saga The: Death Joe Blind of Search In releasedackar Tam,102 2In
+Phrase:  follows that documentary a, 2012
+Example: . gun machine Maxim)mm 7.7 ( in303 . a by supplemented, gun per rounds 120 with,line centre's ship the on guns IV MkF Q three of consistedament arm gun main's shipThe
+Phrase:  gun main's ship
+Example: . laws drug infringing for there are Ecuador and Argentinalike
+Phrase:  drug infringing for
+Example: . first cape the round could ship which pride of matter a became now it and,_ome ThSan _ the called vessel another with in fell itThere
+Phrase: _ome ThSan _ the called vessel another with
+Example: . Russian national a is he still; language Russian the talk to able be not may he though, moment that from national called be to is he, original absolutely and really anything said or done have shall Russian anyIf
+Phrase:  he though, moment that from national called be
+Example: . commentator television a as worked he sports from retirement hisAfter
+Phrase:  sports from retirement his
+Example: . relief tax the for applied owners property266, 7, district theIn
+Phrase:  owners property266, 7
+Example: . slab concrete reinforced a including,neston 000, 1 over weighed foundations the in concreteThe
+Phrase: , 1 over weighed
+Example:  . ground the cover couldum Poss Billy ' Unc orunk Sk Jimmy or Rabbit Peter way the with compared fast very along getting't n was he , breath of out quite was and could he ever as fast asrying hur was Toad. Mr Old though , NowADTO
+Phrase:  ground the cover couldum Poss Billy ' Unc orunk Sk Jimmy or Rabbit Peter way the with compared
+Example:  . lightly so vow marriage your hold you if -- will you if house myLeave
+Phrase:  vow marriage your
+Example: . again else somebody against violence that use to excuse an me give to or in break to or me hurt to try to someone for desire orn yearI
+Phrase:  me hurt to try to
+Example: . functioning everydayove imp to done usually isIt
+Phrase:  functioning everydayove imp to done usually is
+Example: ? nature ofies analog the in support similar any grace Divine of doctrines theHave
+Phrase:  grace Divine of
+Example: . Bill The on it seen've I thing long a like equipment other our all and boots our and in coats different our all put we where locker  long big a got all'veWe
+Phrase:  long a like equipment other our all and boots our and in coats
+Example: . right just seemed it, hill the down coming were you while, there while a forBut
+Phrase:  hill the down coming
+Example: . welcome always will I that you of part a, value I that something have always'llYou
+Phrase:  you of part a
+Example: . old years 500 over be may one least at while, year one only of cycles life haveams clSome
+Phrase:  old years 500 over
+Example: . 1979 February till mission the served and professionalism of sense andour vig full with duty the heldHe
+Phrase:  mission the served and professionalism of sense andour vig full
+Example: . break long a before released LP last his was which, released was"etis parad tillgenä vakaR " LP his, 1987In
+Phrase:  break long a before released LP last his
+Example: . not're they... and, me for end an to means a aresucB- C the that think to seem you but, that deserve would you, all aftercause ', you from contract that take to love wouldI
+Phrase:  that deserve would
+Example: . completely collapse would economy their slaves without that feared alsoThey
+Phrase:  completely collapse would economy their slaves without that feared
+Example: . 2011 to 2009 frominaoveg Herz and Bosnia of Federation of Minister Prime the was) 2019 December 23 – 1954 December27 (ćoviinezj Muafa Mustćoviinezj Muafa Must .H;amp& B of Federation name shorter the by known sometimes isIt
+Phrase:  B of Federation name shorter the by known
+Example:  ! horse the for price good a got have I , Well ` . money of fullrowbar wheel his had he now and , farmer the from already had had heOne
+Phrase:  for price good
+Example: .ovol Dia the of bridge ruined beautiful the byanned sp still is canal main the; pillars andices corn, windows original of remain still traces peasants the of houses poor theIn
+Phrase:  ruined beautiful the byanned sp still is canal main the;
+Example:  . old or young cattle any eat or kill never must thou thee bought that bull the of sake the for but ; kill to enough strong art thou that everything killst can thou and `` ,erahe Bag said '' ,ine th is jungle theAll
+Phrase:  ; kill to
+Example: . level voltage another of power into level voltage one of power make to is transformer a use to reason mainThe
+Phrase:  transformer a use
+Example: . roar terrific a with pipese haw the down andcat wild the over, locker the of out up rushes chain bigThe
+Phrase: cat wild the
+Example: ". Mathematics of Systems Allied andionsatern Qu of Study theoting Prom for AssociationInternational " an was Societyionatern Qu the, society scientific A  = = = Societyionatern Qu = = = : are yards rail former the on now buildings the west to eastFrom
+Phrase:  Mathematics of Systems Allied andionsatern Qu
