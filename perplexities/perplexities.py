@@ -8,7 +8,6 @@ sys.path.append("..")
 from utils import (
     PERTURBATIONS,
     BABYLM_DATA_PATH,
-    gpt2_original_tokenizer,
     load_impossible_lm,
 )
 from tqdm import tqdm
@@ -107,7 +106,7 @@ if __name__ == "__main__":
 
     # Get perturbed test files
     test_files = sorted(glob(
-        f"{BABYLM_DATA_PATH}/babylm_data_perturbed/babylm_{args.test_perturbation_type}/babylm_test_affected/*"))
+        f"{BABYLM_DATA_PATH}/babylm_data_perturbed/babylm_{args.test_perturbation_type}/babylm_test_affected/*.test"))
 
     FILE_SAMPLE_SIZE = 1000
     rng = default_rng(args.random_seed)
@@ -132,7 +131,7 @@ if __name__ == "__main__":
         token_sequences.extend(file_token_sequences)
 
     # For logging/debugging, include decoded sentence
-    test_sents = [gpt2_original_tokenizer.decode(
+    test_sents = [PERTURBATIONS[args.perturbation_type]["gpt2_tokenizer"].decode(
         toks) for toks in token_sequences]
 
     ppl_df = pd.DataFrame({
@@ -159,7 +158,7 @@ if __name__ == "__main__":
         for i in tqdm(range(0, len(token_sequences), BATCH_SIZE)):
             batch = [seq[:MAX_SEQ_LEN] for seq in token_sequences[i:i+BATCH_SIZE]]
             ppls = get_perplexities(
-                model, batch, gpt2_original_tokenizer.eos_token_id)
+                model, batch, PERTURBATIONS[args.perturbation_type]["gpt2_tokenizer"].eos_token_id)
             perplexities.extend(ppls)
 
         # Add ppls to df
